@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     MainWindow w;
-    w.setFixedSize(600, 420);
+    w.setFixedSize(650, 450);
     w.move((QApplication::desktop()->width() - w.width()) / 2,
            (QApplication::desktop()->height() - w.height()) / 2);
     w.setWindowIcon(QIcon(":/resources/logo.svg"));
