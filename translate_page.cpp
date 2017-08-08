@@ -21,6 +21,8 @@ TranslatePage::TranslatePage(QWidget *parent)
 
     QPushButton *clearBtn = new QPushButton("清空");
     QPushButton *trBtn = new QPushButton("翻译");
+    clearBtn->setFixedHeight(35);
+    trBtn->setFixedHeight(35);
     hLayout->addWidget(clearBtn);
     hLayout->addWidget(trBtn);
     trBtn->setFixedHeight(35);

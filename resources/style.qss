@@ -12,6 +12,11 @@ QPlainTextEdit {
     border: 1px solid #D8D8D8;
 }
 
+QLineEdit {
+    background: #FFFFFF;
+    border: 1px solid #2CA7F8;
+    border-radius: 3px;
+}
 
 QPushButton {
     background: #FFFFFF;

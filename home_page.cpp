@@ -10,6 +10,8 @@ HomePage::HomePage(QWidget *parent)
     everydayPage = new EverydayPage();
     dictPage = new DictPage();
 
+    queryEditor->setFixedHeight(35);
+
     switchLayout->addWidget(everydayPage);
     switchLayout->addWidget(dictPage);
 
