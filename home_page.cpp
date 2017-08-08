@@ -7,7 +7,6 @@ HomePage::HomePage(QWidget *parent)
     topLayout = new QHBoxLayout();
     switchLayout = new QStackedLayout();
     queryEditor = new QLineEdit();
-    queryButton = new QPushButton("查词");
     everydayPage = new EverydayPage();
     dictPage = new DictPage();
 
@@ -16,7 +15,6 @@ HomePage::HomePage(QWidget *parent)
 
     topLayout->addSpacing(20);
     topLayout->addWidget(queryEditor);
-    topLayout->addWidget(queryButton);
     topLayout->addSpacing(20);
 
     layout->addSpacing(5);
@@ -25,7 +23,6 @@ HomePage::HomePage(QWidget *parent)
 
     connect(queryEditor, &QLineEdit::textChanged, this, &HomePage::queryWord);
     connect(queryEditor, &QLineEdit::returnPressed, this, &HomePage::queryWord);
-    connect(queryButton, &QPushButton::clicked, this, &HomePage::queryWord);
 }
 
 void HomePage::queryWord()

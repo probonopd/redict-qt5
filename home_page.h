@@ -5,7 +5,6 @@
 #include <QVBoxLayout>
 #include <QStackedLayout>
 #include <QLineEdit>
-#include <QPushButton>
 #include "everyday_page.h"
 #include "dict_page.h"
 
@@ -22,7 +21,6 @@ private:
     QStackedLayout *switchLayout;
 
     QLineEdit *queryEditor;
-    QPushButton *queryButton;
 
     EverydayPage *everydayPage;
     DictPage *dictPage;
