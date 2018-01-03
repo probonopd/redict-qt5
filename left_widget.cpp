@@ -46,7 +46,7 @@ void LeftWidget::paintEvent(QPaintEvent *)
         }else
             painter.setPen(QPen(QColor("#000000")));
 
-        painter.drawText(QRect(40, tabY + 4, width, height), Qt::AlignTop, tabName);
+        painter.drawText(QRect(0, tabY, width, height), Qt::AlignCenter, tabName);
 
         tabY += height;
     }
@@ -56,12 +56,7 @@ void LeftWidget::mousePressEvent(QMouseEvent *event)
 {
     int prevIndex = currentIndex;
 
-    if (event->y() < 30)
-        currentIndex = 0;
-    else if (event->y() < 60)
-        currentIndex = 1;
-    else if (event->y() < 90)
-        currentIndex = 2;
+    currentIndex = event->y() / 30;
 
     if (prevIndex != currentIndex) {
         emit currentIndexChanged(currentIndex);
