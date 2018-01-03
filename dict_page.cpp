@@ -61,7 +61,7 @@ void DictPage::processingData(QString name, QString uk_phonetic, QString us_phon
     if (uk_phonetic.isEmpty() && us_phonetic.isEmpty()) {
         pronLabel1->setVisible(false);
         pronLabel2->setVisible(false);
-    }else {
+    } else {
         pronLabel1->setVisible(true);
         pronLabel2->setVisible(true);
 

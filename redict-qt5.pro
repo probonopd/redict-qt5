@@ -4,11 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network multimedia
+QT       += core gui network multimedia svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = dictionary-reborn
+TARGET = redict-qt5
 TEMPLATE = app
 CONFIG += c++11
 
