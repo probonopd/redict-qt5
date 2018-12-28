@@ -53,7 +53,6 @@ private slots:
 
 private:
     QNetworkAccessManager *access_manager_;
-    QNetworkAccessManager *image_access_manager_;
 };
 
 #endif

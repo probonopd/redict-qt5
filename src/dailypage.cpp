@@ -33,7 +33,7 @@ DailyPage::DailyPage(QWidget *parent)
     connect(youdao_api_, &YoudaoAPI::dailyFinished, this, &DailyPage::handleDailyFinished);
     connect(youdao_api_, &YoudaoAPI::loadImageFinsihed, this, &DailyPage::handleLoadImageFinsihed);
 
-    QTimer::singleShot(1, youdao_api_, &YoudaoAPI::queryDaily);
+    QTimer::singleShot(100, youdao_api_, &YoudaoAPI::queryDaily);
 }
 
 void DailyPage::handleDailyFinished(std::tuple<QString, QString, QString, QString, QString> datas)

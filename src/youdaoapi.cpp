@@ -20,15 +20,13 @@ YoudaoAPI* YoudaoAPI::instance()
 
 YoudaoAPI::YoudaoAPI(QObject *parent)
     : QObject(parent),
-      access_manager_(new QNetworkAccessManager),
-      image_access_manager_(new QNetworkAccessManager)
+      access_manager_(new QNetworkAccessManager)
 {
 }
 
 YoudaoAPI::~YoudaoAPI()
 {
     delete access_manager_;
-    delete image_access_manager_;
 }
 
 void YoudaoAPI::queryWord(const QString &text)
@@ -100,7 +98,7 @@ void YoudaoAPI::loadImage(const QString &image_url)
 {
     QUrl url(image_url);
     QNetworkRequest request(url);
-    QNetworkReply *reply = image_access_manager_->get(request);
+    QNetworkReply *reply = access_manager_->get(request);
 
     qDebug() << image_url;
 
