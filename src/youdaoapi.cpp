@@ -100,6 +100,8 @@ void YoudaoAPI::loadImage(const QString &image_url)
     QNetworkRequest request(url);
     QNetworkReply *reply = m_http->get(request);
 
+    qDebug() << image_url;
+
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleLoadImageFinished);
 }
 
@@ -253,6 +255,8 @@ void YoudaoAPI::handleLoadImageFinished()
     if (reply->error() != QNetworkReply::NoError) {
         return;
     }
+
+    qDebug() << "load file finished.";
 
     emit loadImageFinsihed(reply->readAll());
 }

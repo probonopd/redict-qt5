@@ -49,9 +49,6 @@ TranslatePage::TranslatePage(QWidget *parent)
             translate_edit_->clear();
         }
     });
-
-//    connect(origin_edit_, &QTextEdit::focusIn, [=] { translate_edit_->clearSelection(); });
-//    connect(origin_edit_, &QTextEdit::focusOut, [=] { origin_edit_->clearSelection(); });
 }
 
 TranslatePage::~TranslatePage()

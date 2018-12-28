@@ -16,7 +16,7 @@ DailyPage::DailyPage(QWidget *parent)
 
     image_label_->setScaledContents(true);
 
-    content_layout->setContentsMargins(10, 0, 10, 0);
+    content_layout->setContentsMargins(20, 0, 20, 0);
     content_layout->addWidget(summary_label_);
     content_layout->addWidget(title_label_);
     content_layout->addWidget(datetime_label_);
