@@ -20,13 +20,15 @@ YoudaoAPI* YoudaoAPI::instance()
 
 YoudaoAPI::YoudaoAPI(QObject *parent)
     : QObject(parent),
-      m_http(new QNetworkAccessManager(this))
+      access_manager_(new QNetworkAccessManager),
+      image_access_manager_(new QNetworkAccessManager)
 {
 }
 
 YoudaoAPI::~YoudaoAPI()
 {
-    delete m_http;
+    delete access_manager_;
+    delete image_access_manager_;
 }
 
 void YoudaoAPI::queryWord(const QString &text)
@@ -42,7 +44,7 @@ void YoudaoAPI::queryWord(const QString &text)
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
     QNetworkRequest request(url);
-    QNetworkReply *reply = m_http->get(request);
+    QNetworkReply *reply = access_manager_->get(request);
 
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleQueryWordFinished);
 }
@@ -62,7 +64,7 @@ void YoudaoAPI::suggest(const QString &text)
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
     QNetworkRequest request(url);
-    QNetworkReply *reply = m_http->get(request);
+    QNetworkReply *reply = access_manager_->get(request);
 
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleSuggestFinished);
 }
@@ -89,7 +91,7 @@ void YoudaoAPI::translate(const QString &text, const QString &type)
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
     QNetworkRequest request(url);
-    QNetworkReply *reply = m_http->get(request);
+    QNetworkReply *reply = access_manager_->get(request);
 
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleTranslateFinished);
 }
@@ -98,7 +100,7 @@ void YoudaoAPI::loadImage(const QString &image_url)
 {
     QUrl url(image_url);
     QNetworkRequest request(url);
-    QNetworkReply *reply = m_http->get(request);
+    QNetworkReply *reply = image_access_manager_->get(request);
 
     qDebug() << image_url;
 
@@ -118,7 +120,7 @@ void YoudaoAPI::queryDaily()
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
     QNetworkRequest request(url);
-    QNetworkReply *reply = m_http->get(request);
+    QNetworkReply *reply = access_manager_->get(request);
 
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleQueryDailyFinished);
 }
@@ -255,8 +257,6 @@ void YoudaoAPI::handleLoadImageFinished()
     if (reply->error() != QNetworkReply::NoError) {
         return;
     }
-
-    qDebug() << "load file finished.";
 
     emit loadImageFinsihed(reply->readAll());
 }

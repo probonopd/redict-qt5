@@ -39,6 +39,7 @@ void SideBar::initButtons()
         SideButton *btn = new SideButton;
         btn->setText(name);
         btn->setFixedHeight(BUTTON_ITEM_HEIGHT);
+        btn->setFocusPolicy(Qt::NoFocus);
         btn->setCheckable(true);
 
         main_layout_->addWidget(btn);

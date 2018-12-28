@@ -52,8 +52,8 @@ private slots:
     void handleLoadImageFinished();
 
 private:
-    QNetworkAccessManager *m_http;
-
+    QNetworkAccessManager *access_manager_;
+    QNetworkAccessManager *image_access_manager_;
 };
 
 #endif
