@@ -42,8 +42,7 @@ void DailyPage::handleDailyFinished(std::tuple<QString, QString, QString, QStrin
     summary_label_->setText(std::get<1>(datas));
     datetime_label_->setText(std::get<2>(datas));
 
-    // fix appimage?
-    QTimer::singleShot(10, this, [=] { youdao_api_->loadImage(std::get<4>(datas)); });
+    youdao_api_->loadImage(std::get<4>(datas));
 }
 
 void DailyPage::handleLoadImageFinsihed(const QByteArray &data)
