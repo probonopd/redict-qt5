@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     mainWidget->setLayout(layout);
 
     setCentralWidget(mainWidget);
+    setMinimumSize(650, 450);
+    resize(650, 450);
 
     connect(leftWidget, &LeftWidget::currentIndexChanged, this, [=](int index){
         rightWidget->layout->setCurrentIndex(index);
