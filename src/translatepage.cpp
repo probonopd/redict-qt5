@@ -8,20 +8,22 @@ TranslatePage::TranslatePage(QWidget *parent)
       origin_edit_(new QTextEdit),
       translate_edit_(new QTextEdit),
       type_combobox_(new QComboBox),
-      translate_btn_(new QPushButton("翻译")),
+      translate_btn_(new QPushButton),
       m_api(new YoudaoAPI)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     QHBoxLayout *translate_layout = new QHBoxLayout;
 
-    type_combobox_->addItem("自动检测语言");
-    type_combobox_->addItem("中文 → 英语");
-    type_combobox_->addItem("中文 → 日语");
-    type_combobox_->addItem("中文 → 韩语");
-    type_combobox_->addItem("中文 → 法语");
-    type_combobox_->addItem("中文 → 俄语");
-    type_combobox_->addItem("中文 → 西班牙语");
-    type_combobox_->addItem("英语 → 中文");
+    translate_btn_->setText(tr("Translation"));
+
+    type_combobox_->addItem(tr("Automatic detection"));
+    type_combobox_->addItem(tr("Chinese to English"));
+    type_combobox_->addItem(tr("Chinese to Japanese"));
+    type_combobox_->addItem(tr("Chinese to Korean"));
+    type_combobox_->addItem(tr("Chinese to French"));
+    type_combobox_->addItem(tr("Chinese to Russian"));
+    type_combobox_->addItem(tr("Chinese to Spanish"));
+    type_combobox_->addItem(tr("English to Chinese"));
 
     translate_layout->addWidget(type_combobox_);
     translate_layout->addWidget(translate_btn_);
@@ -37,7 +39,7 @@ TranslatePage::TranslatePage(QWidget *parent)
     // translate_btn_->setStyleSheet(translate_btn_->styleSheet() + "border-radius: 4px");
     translate_btn_->setFixedSize(130, 35);
 
-    origin_edit_->setPlaceholderText("请输入您要翻译的文字");
+    origin_edit_->setPlaceholderText(tr("Please enter the text you want to translate"));
     translate_edit_->setReadOnly(true);
 
     connect(translate_btn_, &QPushButton::clicked, this, &TranslatePage::translate);

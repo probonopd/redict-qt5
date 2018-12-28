@@ -50,4 +50,7 @@ HEADERS += \
     src/utils.h \
     src/widgets/linkbutton.h
 
+TRANSLATIONS += translations/redict.ts \
+                translations/redict_zh_CN.ts
+
 RESOURCES += resources.qrc

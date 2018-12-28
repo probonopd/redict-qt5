@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>images/redict.svg</file>
         <file>qss/style.qss</file>
+        <file>translations/redict.qm</file>
+        <file>translations/redict_zh_CN.qm</file>
     </qresource>
 </RCC>
