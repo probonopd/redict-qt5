@@ -23,13 +23,11 @@ private:
     void handleTranslateFinished(const QString &result);
 
 private:
-    QTextEdit *m_orginEdit;
-    QTextEdit *m_transEdit;
-    QComboBox *m_typeBox;
-    QPushButton *m_transBtn;
+    QTextEdit *origin_edit_;
+    QTextEdit *translate_edit_;
+    QComboBox *type_combobox_;
+    QPushButton *translate_btn_;
     YoudaoAPI *m_api;
-
-    QMap<QString, QString> m_types;
 };
 
 #endif

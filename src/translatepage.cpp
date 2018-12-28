@@ -5,53 +5,53 @@
 
 TranslatePage::TranslatePage(QWidget *parent)
     : QWidget(parent),
-      m_orginEdit(new QTextEdit),
-      m_transEdit(new QTextEdit),
-      m_typeBox(new QComboBox),
-      m_transBtn(new QPushButton("翻译")),
+      origin_edit_(new QTextEdit),
+      translate_edit_(new QTextEdit),
+      type_combobox_(new QComboBox),
+      translate_btn_(new QPushButton("翻译")),
       m_api(new YoudaoAPI)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
-    QHBoxLayout *transLayout = new QHBoxLayout;
+    QHBoxLayout *translate_layout = new QHBoxLayout;
 
-    m_typeBox->addItem("自动检测语言");
-    m_typeBox->addItem("中文 → 英语");
-    m_typeBox->addItem("中文 → 日语");
-    m_typeBox->addItem("中文 → 韩语");
-    m_typeBox->addItem("中文 → 法语");
-    m_typeBox->addItem("中文 → 俄语");
-    m_typeBox->addItem("中文 → 西班牙语");
-    m_typeBox->addItem("英语 → 中文");
+    type_combobox_->addItem("自动检测语言");
+    type_combobox_->addItem("中文 → 英语");
+    type_combobox_->addItem("中文 → 日语");
+    type_combobox_->addItem("中文 → 韩语");
+    type_combobox_->addItem("中文 → 法语");
+    type_combobox_->addItem("中文 → 俄语");
+    type_combobox_->addItem("中文 → 西班牙语");
+    type_combobox_->addItem("英语 → 中文");
 
-    transLayout->addWidget(m_typeBox);
-    transLayout->addWidget(m_transBtn);
+    translate_layout->addWidget(type_combobox_);
+    translate_layout->addWidget(translate_btn_);
 
     layout->setContentsMargins(15, 10, 15, 15);
-    layout->addWidget(m_orginEdit);
+    layout->addWidget(origin_edit_);
     layout->addSpacing(5);
-    layout->addLayout(transLayout);
+    layout->addLayout(translate_layout);
     layout->addSpacing(5);
-    layout->addWidget(m_transEdit);
+    layout->addWidget(translate_edit_);
 
-    // m_transBtn->setObjectName("QueryBtn");
-    // m_transBtn->setStyleSheet(m_transBtn->styleSheet() + "border-radius: 4px");
-    m_transBtn->setFixedSize(130, 35);
+    // translate_btn_->setObjectName("QueryBtn");
+    // translate_btn_->setStyleSheet(translate_btn_->styleSheet() + "border-radius: 4px");
+    translate_btn_->setFixedSize(130, 35);
 
-    m_orginEdit->setPlaceholderText("请输入您要翻译的文字");
-    m_transEdit->setReadOnly(true);
+    origin_edit_->setPlaceholderText("请输入您要翻译的文字");
+    translate_edit_->setReadOnly(true);
 
-    connect(m_transBtn, &QPushButton::clicked, this, &TranslatePage::translate);
+    connect(translate_btn_, &QPushButton::clicked, this, &TranslatePage::translate);
     connect(m_api, &YoudaoAPI::translateFinished, this, &TranslatePage::handleTranslateFinished);
-    connect(m_typeBox, &QComboBox::currentTextChanged, [=] { translate(); });
+    connect(type_combobox_, &QComboBox::currentTextChanged, [=] { translate(); });
 
-    connect(m_orginEdit, &QTextEdit::textChanged, [=] {
-        if (m_orginEdit->toPlainText().isEmpty()) {
-            m_transEdit->clear();
+    connect(origin_edit_, &QTextEdit::textChanged, [=] {
+        if (origin_edit_->toPlainText().isEmpty()) {
+            translate_edit_->clear();
         }
     });
 
-//    connect(m_orginEdit, &QTextEdit::focusIn, [=] { m_transEdit->clearSelection(); });
-//    connect(m_orginEdit, &QTextEdit::focusOut, [=] { m_orginEdit->clearSelection(); });
+//    connect(origin_edit_, &QTextEdit::focusIn, [=] { translate_edit_->clearSelection(); });
+//    connect(origin_edit_, &QTextEdit::focusOut, [=] { origin_edit_->clearSelection(); });
 }
 
 TranslatePage::~TranslatePage()
@@ -63,19 +63,16 @@ void TranslatePage::keyPressEvent(QKeyEvent *e)
     if (e->key() == Qt::Key_Return && (e->modifiers() & Qt::ControlModifier)) {
         translate();
     }
-
-    // request window keypress.
-//    (qobject_cast<MainWindow *>(this->window()))->requestKeyPressEvent(e);
 }
 
 void TranslatePage::translate()
 {
-    QString text = m_orginEdit->toPlainText();
+    QString text = origin_edit_->toPlainText();
 
     if (text.isEmpty())
         return;
 
-    int currentType = m_typeBox->currentIndex();
+    int currentType = type_combobox_->currentIndex();
     QString type;
 
     switch (currentType) {
@@ -112,5 +109,5 @@ void TranslatePage::translate()
 
 void TranslatePage::handleTranslateFinished(const QString &result)
 {
-    m_transEdit->setPlainText(result);
+    translate_edit_->setPlainText(result);
 }
