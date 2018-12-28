@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/style.qss</file>
-        <file>resources/logo.svg</file>
+        <file>images/redict.svg</file>
+        <file>qss/style.qss</file>
     </qresource>
 </RCC>

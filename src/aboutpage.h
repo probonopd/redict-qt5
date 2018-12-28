@@ -2,17 +2,13 @@
 #define ABOUTPAGE_H
 
 #include <QWidget>
-#include <QVBoxLayout>
 
 class AboutPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    AboutPage(QWidget *parent = 0);
-
-private:
-    QVBoxLayout *layout;
+    explicit AboutPage(QWidget *parent = nullptr);
 };
 
 #endif // ABOUTPAGE_H
