@@ -25,19 +25,33 @@ AboutPage::AboutPage(QWidget *parent)
     copyright_label->setText(QStringLiteral("Copyright © 2019 Unson Wong(Rekols)"));
 
     QLabel *license_label = new QLabel;
-    license_label->setText(tr("This project is licensed under version 3 of the GNU General Public License."));
+    license_label->setWordWrap(true);
+    license_label->setText("This project is licensed under version 3 of the GNU General Public License.");
+
+    QSvgWidget *youdao_icon = new QSvgWidget(":/images/youdao-dict.svg");
+    youdao_icon->setFixedSize(20, 20);
+
+    QHBoxLayout *copyright_layout = new QHBoxLayout;
+    QLabel *youdao_label = new QLabel("网络数据均来自有道词典, 内容版权归网易有道所有.");
+
+    copyright_layout->addStretch();
+    copyright_layout->addWidget(youdao_icon);
+    copyright_layout->addWidget(youdao_label);
+    copyright_layout->addStretch();
 
     LinkButton *link_button = new LinkButton("https://github.com/rekols/redict-qt5");
 
     main_layout->setMargin(0);
     main_layout->addSpacing(50);
-    main_layout->addWidget(icon_widget, 0, Qt::AlignHCenter);
+    main_layout->addWidget(icon_widget, 0, Qt::AlignCenter);
     main_layout->addSpacing(5);
-    main_layout->addWidget(title_label, 0, Qt::AlignHCenter);
-    main_layout->addWidget(version_label, 0, Qt::AlignHCenter);
-    main_layout->addWidget(link_button, 0, Qt::AlignHCenter);
-    main_layout->addWidget(copyright_label, 0, Qt::AlignHCenter);
-    main_layout->addWidget(license_label, 0, Qt::AlignHCenter);
+    main_layout->addWidget(title_label, 0, Qt::AlignCenter);
+    main_layout->addWidget(version_label, 0, Qt::AlignCenter);
+    main_layout->addWidget(link_button, 0, Qt::AlignCenter);
+    main_layout->addWidget(copyright_label, 0, Qt::AlignCenter);
+    main_layout->addWidget(license_label, 0, Qt::AlignCenter);
+    main_layout->addSpacing(5);
+    main_layout->addLayout(copyright_layout);
     main_layout->addStretch();
 
     connect(link_button, &LinkButton::clicked, this, [=] {
