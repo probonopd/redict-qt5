@@ -14,11 +14,11 @@ DonatePage::DonatePage(QWidget *parent)
 
     QLabel *alipay_label = new QLabel;
     QPixmap pixmap(":/images/alipay.png");
-    pixmap = pixmap.scaled(QSize(300, 400),
+    pixmap = pixmap.scaled(QSize(260, 360),
                            Qt::IgnoreAspectRatio,
                            Qt::SmoothTransformation);
     alipay_label->setPixmap(pixmap);
-    alipay_label->setFixedSize(300, 400);
+    alipay_label->setFixedSize(260, 360);
 
 //    QGraphicsDropShadowEffect *img_shadow = new QGraphicsDropShadowEffect;
 //    img_shadow->setBlurRadius(5);
@@ -29,8 +29,8 @@ DonatePage::DonatePage(QWidget *parent)
     layout->setContentsMargins(20, 0, 0, 0);
     layout->setSpacing(0);
     layout->addSpacing(10);
-    layout->addWidget(label, 0, Qt::AlignLeft);
-    layout->addSpacing(10);
-    layout->addWidget(alipay_label, 0, Qt::AlignLeft);
+    layout->addWidget(alipay_label, 0, Qt::AlignHCenter);
+    layout->addSpacing(20);
+    layout->addWidget(label, 0, Qt::AlignHCenter);
     layout->addStretch();
 }

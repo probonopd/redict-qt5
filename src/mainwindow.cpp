@@ -42,8 +42,7 @@ void MainWindow::initAttributes()
     setCentralWidget(main_widget);
     setWindowIcon(QIcon(":/images/redict.svg"));
     setWindowTitle("Redict");
-    setMinimumSize(700, 450);
-    resize(700, 450);
+    setFixedSize(705, 455);
 
     connect(side_bar_, &SideBar::buttonClicked, this, &MainWindow::handleSideButtonClicked);
 }
