@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QComboBox>
 #include <QTextEdit>
+#include <QTimer>
 #include "youdaoapi.h"
 
 class TranslatePage : public QWidget
@@ -21,12 +22,14 @@ protected:
 private:
     void translate();
     void handleTranslateFinished(const QString &result);
+    void delayTranslate();
 
 private:
     QTextEdit *origin_edit_;
     QTextEdit *translate_edit_;
     QComboBox *type_combobox_;
     QPushButton *translate_btn_;
+    QTimer *m_delayTimer;
     YoudaoAPI *m_api;
 };
 

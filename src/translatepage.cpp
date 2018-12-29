@@ -9,13 +9,13 @@ TranslatePage::TranslatePage(QWidget *parent)
       translate_edit_(new QTextEdit),
       type_combobox_(new QComboBox),
       translate_btn_(new QPushButton),
+      m_delayTimer(new QTimer),
       m_api(new YoudaoAPI)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     QHBoxLayout *translate_layout = new QHBoxLayout;
 
     translate_btn_->setText(tr("Translation"));
-
     type_combobox_->addItem(tr("Automatic detection"));
     type_combobox_->addItem(tr("Chinese to English"));
     type_combobox_->addItem(tr("Chinese to Japanese"));
@@ -42,14 +42,20 @@ TranslatePage::TranslatePage(QWidget *parent)
     origin_edit_->setPlaceholderText(tr("Please enter the text you want to translate"));
     translate_edit_->setReadOnly(true);
 
-    connect(translate_btn_, &QPushButton::clicked, this, &TranslatePage::translate);
+    m_delayTimer->setSingleShot(true);
+    m_delayTimer->setInterval(500);
+
     connect(m_api, &YoudaoAPI::translateFinished, this, &TranslatePage::handleTranslateFinished);
+    connect(translate_btn_, &QPushButton::clicked, this, &TranslatePage::translate);
     connect(type_combobox_, &QComboBox::currentTextChanged, [=] { translate(); });
+    connect(m_delayTimer, &QTimer::timeout, this, &TranslatePage::translate);
 
     connect(origin_edit_, &QTextEdit::textChanged, [=] {
         if (origin_edit_->toPlainText().isEmpty()) {
             translate_edit_->clear();
         }
+
+        delayTranslate();
     });
 }
 
@@ -109,4 +115,9 @@ void TranslatePage::translate()
 void TranslatePage::handleTranslateFinished(const QString &result)
 {
     translate_edit_->setPlainText(result);
+}
+
+void TranslatePage::delayTranslate()
+{
+    m_delayTimer->start();
 }
