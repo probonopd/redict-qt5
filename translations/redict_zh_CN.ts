@@ -8,10 +8,21 @@
         <source>Version</source>
         <translation>版本号</translation>
     </message>
+</context>
+<context>
+    <name>DonatePage</name>
     <message>
-        <location filename="../src/aboutpage.cpp" line="28"/>
-        <source>This project is licensed under version 3 of the GNU General Public License.</source>
-        <translation></translation>
+        <location filename="../src/donatepage.cpp" line="12"/>
+        <source>Welcome to donate to me</source>
+        <translation>欢迎捐助我</translation>
+    </message>
+</context>
+<context>
+    <name>HomePage</name>
+    <message>
+        <location filename="../src/homepage.cpp" line="17"/>
+        <source>Enter the word or phrase you want to query</source>
+        <translation>请输入要查询的词语或词组</translation>
     </message>
 </context>
 <context>
@@ -31,11 +42,16 @@
         <source>About</source>
         <translation>关于</translation>
     </message>
+    <message>
+        <location filename="../src/sidebar.cpp" line="13"/>
+        <source>Donates</source>
+        <translation>捐款</translation>
+    </message>
 </context>
 <context>
     <name>TranslatePage</name>
     <message>
-        <location filename="../src/translatepage.cpp" line="17"/>
+        <location filename="../src/translatepage.cpp" line="18"/>
         <source>Translation</source>
         <translation>翻译</translation>
     </message>
@@ -47,37 +63,37 @@
     <message>
         <location filename="../src/translatepage.cpp" line="20"/>
         <source>Chinese to English</source>
-        <translation>中文 -> 英语</translation>
+        <translation>中文 -&gt; 英语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="21"/>
         <source>Chinese to Japanese</source>
-        <translation>中文 -> 日语</translation>
+        <translation>中文 -&gt; 日语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="22"/>
         <source>Chinese to Korean</source>
-        <translation>中文 -> 韩语</translation>
+        <translation>中文 -&gt; 韩语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="23"/>
         <source>Chinese to French</source>
-        <translation>中文 -> 法语</translation>
+        <translation>中文 -&gt; 法语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="24"/>
         <source>Chinese to Russian</source>
-        <translation>中文 -> 俄语</translation>
+        <translation>中文 -&gt; 俄语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="25"/>
         <source>Chinese to Spanish</source>
-        <translation>中文 -> 西班牙语</translation>
+        <translation>中文 -&gt; 西班牙语</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="26"/>
         <source>English to Chinese</source>
-        <translation>英语 -> 中文</translation>
+        <translation>英语 -&gt; 中文</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="42"/>

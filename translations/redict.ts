@@ -8,9 +8,20 @@
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>DonatePage</name>
     <message>
-        <location filename="../src/aboutpage.cpp" line="28"/>
-        <source>This project is licensed under version 3 of the GNU General Public License.</source>
+        <location filename="../src/donatepage.cpp" line="12"/>
+        <source>Welcome to donate to me</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HomePage</name>
+    <message>
+        <location filename="../src/homepage.cpp" line="17"/>
+        <source>Enter the word or phrase you want to query</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -31,11 +42,16 @@
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/sidebar.cpp" line="13"/>
+        <source>Donates</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TranslatePage</name>
     <message>
-        <location filename="../src/translatepage.cpp" line="17"/>
+        <location filename="../src/translatepage.cpp" line="18"/>
         <source>Translation</source>
         <translation type="unfinished"></translation>
     </message>
