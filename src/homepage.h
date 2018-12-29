@@ -15,7 +15,8 @@ public:
     explicit HomePage(QWidget *parent = nullptr);
 
 private:
-    void handleTextEdited(QString);
+    void handleTextEdited();
+    void handleEditReturnPressed();
 
 private:
     QLineEdit *query_edit_;

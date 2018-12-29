@@ -26,15 +26,22 @@ HomePage::HomePage(QWidget *parent)
     setLayout(main_layout);
 
     connect(query_edit_, &QLineEdit::textEdited, this, &HomePage::handleTextEdited);
+    connect(query_edit_, &QLineEdit::returnPressed, this, &HomePage::handleEditReturnPressed);
 }
 
-void HomePage::handleTextEdited(QString text)
+void HomePage::handleTextEdited()
 {
-    if (text.isEmpty()) {
+    if (query_edit_->text().isEmpty()) {
         stacked_layout_->setCurrentIndex(0);
     } else {
-        dict_page_->queryWord(text);
+        dict_page_->queryWord(query_edit_->text());
         stacked_layout_->setCurrentIndex(1);
     }
+}
+
+void HomePage::handleEditReturnPressed()
+{
+    query_edit_->selectAll();
+    handleTextEdited();
 }
 
