@@ -14,6 +14,7 @@ HomePage::HomePage(QWidget *parent)
     stacked_layout_->addWidget(daily_page_);
     stacked_layout_->addWidget(dict_page_);
 
+    query_edit_->setPlaceholderText(tr("Enter the word or phrase you want to query"));
     query_edit_->setFocusPolicy(Qt::StrongFocus);
     query_edit_->setFixedHeight(40);
 
