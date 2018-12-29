@@ -20,6 +20,7 @@ HomePage::HomePage(QWidget *parent)
     main_layout->setMargin(0);
     main_layout->setSpacing(0);
     main_layout->addWidget(query_edit_);
+    main_layout->addSpacing(5);
     main_layout->addLayout(stacked_layout_);
     setLayout(main_layout);
 
