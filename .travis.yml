@@ -15,7 +15,7 @@ script:
   - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
   - mkdir -p appdir/usr/bin/ appdir/usr/share/applications/ appdir/usr/share/applications/ appdir/usr/share/icons/hicolor/scalable/apps
-  - cp redict-qt5 appdir/usr/bin/
+  - cp redict appdir/usr/bin/
   - cp redict.desktop appdir/usr/share/applications/
   - cp images/redict.svg appdir/usr/share/icons/hicolor/scalable/apps/redict.svg
   - find appdir/

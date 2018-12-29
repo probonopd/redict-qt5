@@ -8,7 +8,7 @@ QT       += core gui network multimedia svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = redict-qt5
+TARGET = redict
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
