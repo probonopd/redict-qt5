@@ -35,7 +35,8 @@ SOURCES += \
     src/translatepage.cpp \
     src/aboutpage.cpp \
     src/utils.cpp \
-    src/widgets/linkbutton.cpp
+    src/widgets/linkbutton.cpp \
+    src/donatepage.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -48,7 +49,8 @@ HEADERS += \
     src/translatepage.h \
     src/aboutpage.h \
     src/utils.h \
-    src/widgets/linkbutton.h
+    src/widgets/linkbutton.h \
+    src/donatepage.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts

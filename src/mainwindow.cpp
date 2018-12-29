@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
       side_bar_(new SideBar),
       home_page_(new HomePage),
       translate_page_(new TranslatePage),
+      donate_page_(new DonatePage),
       about_page_(new AboutPage),
       stacked_layout_(new QStackedLayout)
 {
@@ -29,6 +30,7 @@ void MainWindow::initAttributes()
 
     stacked_layout_->addWidget(home_page_);
     stacked_layout_->addWidget(translate_page_);
+    stacked_layout_->addWidget(donate_page_);
     stacked_layout_->addWidget(about_page_);
 
     main_layout->setMargin(0);
