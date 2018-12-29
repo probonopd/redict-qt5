@@ -100,8 +100,6 @@ void YoudaoAPI::loadImage(const QString &image_url)
     QNetworkRequest request(url);
     QNetworkReply *reply = access_manager_->get(request);
 
-    qDebug() << image_url;
-
     connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleLoadImageFinished);
 }
 
