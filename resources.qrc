@@ -1,6 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/style.qss</file>
-        <file>resources/logo.svg</file>
+        <file>images/redict.svg</file>
+        <file>images/youdao-dict.svg</file>
+        <file>images/alipay.png</file>
+        <file>qss/style.qss</file>
+        <file>translations/redict.qm</file>
+        <file>translations/redict_zh_CN.qm</file>
     </qresource>
 </RCC>

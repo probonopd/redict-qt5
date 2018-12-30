@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Redict
-Exec=redict-qt5
+Exec=redict
 Icon=redict
 Comment=A dictionary based on C++/Qt development
 Categories=Office;Dictionary;

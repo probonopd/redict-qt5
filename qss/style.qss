@@ -1,0 +1,76 @@
+QMainWindow {
+    background: white;
+}
+
+QLineEdit {
+    border: none;
+    border-bottom: 2px solid rgba(66, 133, 244, 30%);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+QLineEdit:focus {
+    border-bottom: 2px solid rgba(66, 133, 244, 100%);
+}
+
+#SideButton {
+    margin: 0;
+    text-align: left;
+    padding: 5px 15px;
+    border: none;
+}
+
+#SideButton:hover {
+    background-color: rgb(237, 237, 237);
+}
+
+#SideButton:checked {
+    color: rgba(50, 115, 220);
+    font-weight: 500;
+    background-color: rgba(66, 133, 244, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.1);
+    border-left: none;
+    border-right: 5px;
+}
+
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+
+QScrollArea > QWidget > QWidget {
+    background: transparent;
+}
+
+QScrollBar:vertical{
+    width:12px;
+    border:1px solid rgba(0,0,0,50);
+    margin:0px,0px,0px,0px;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+QScrollBar::handle:vertical{
+    width:16px;
+    background:rgba(0,0,0,25%);
+    min-height:20;
+}
+QScrollBar::handle:vertical:hover{
+    background:rgba(0,0,0,50%);
+    border:0px rgba(0,0,0,25%);
+}
+
+LinkButton {
+    background-color: transparent;
+    border: none;
+    color: #0082fa;
+}
+
+LinkButton:hover {
+    color: #01BDFF;
+}
+
+LinkButton:pressed {
+    color: #0082fa;
+}
+
