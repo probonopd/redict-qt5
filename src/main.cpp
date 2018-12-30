@@ -32,6 +32,12 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setStyleSheet(get_file_content(":/qss/style.qss"));
 
+#ifdef Q_OS_WIN
+    QFont font = a.font();
+    font.setFamily("Microsoft Yahei");
+    a.setFont(font);
+#endif
+
     QTranslator translator;
     if (translator.load(QString(":/translations/redict_%1.qm")
                         .arg(QLocale::system().name()))) {
