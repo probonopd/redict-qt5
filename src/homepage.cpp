@@ -36,12 +36,7 @@ HomePage::HomePage(QWidget *parent)
 
 void HomePage::handleTextEdited()
 {
-    if (query_edit_->text().isEmpty()) {
-        stacked_layout_->setCurrentIndex(0);
-    } else {
-        delay_timer_->start();
-        stacked_layout_->setCurrentIndex(1);
-    }
+    delay_timer_->start();
 }
 
 void HomePage::handleEditReturnPressed()
@@ -52,6 +47,11 @@ void HomePage::handleEditReturnPressed()
 
 void HomePage::queryWord()
 {
-    dict_page_->queryWord(query_edit_->text());
+    if (query_edit_->text().isEmpty()) {
+        stacked_layout_->setCurrentIndex(0);
+    } else {
+        dict_page_->queryWord(query_edit_->text());
+        stacked_layout_->setCurrentIndex(1);
+    }
 }
 
