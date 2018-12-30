@@ -7,7 +7,8 @@ HomePage::HomePage(QWidget *parent)
       query_edit_(new QLineEdit),
       stacked_layout_(new QStackedLayout),
       daily_page_(new DailyPage),
-      dict_page_(new DictPage)
+      dict_page_(new DictPage),
+      delay_timer_(new QTimer)
 {
     QVBoxLayout *main_layout = new QVBoxLayout;
 
@@ -25,8 +26,12 @@ HomePage::HomePage(QWidget *parent)
     main_layout->addLayout(stacked_layout_);
     setLayout(main_layout);
 
+    delay_timer_->setSingleShot(true);
+    delay_timer_->setInterval(300);
+
     connect(query_edit_, &QLineEdit::textEdited, this, &HomePage::handleTextEdited);
     connect(query_edit_, &QLineEdit::returnPressed, this, &HomePage::handleEditReturnPressed);
+    connect(delay_timer_, &QTimer::timeout, this, &HomePage::queryWord);
 }
 
 void HomePage::handleTextEdited()
@@ -34,7 +39,7 @@ void HomePage::handleTextEdited()
     if (query_edit_->text().isEmpty()) {
         stacked_layout_->setCurrentIndex(0);
     } else {
-        dict_page_->queryWord(query_edit_->text());
+        delay_timer_->start();
         stacked_layout_->setCurrentIndex(1);
     }
 }
@@ -43,5 +48,10 @@ void HomePage::handleEditReturnPressed()
 {
     query_edit_->selectAll();
     handleTextEdited();
+}
+
+void HomePage::queryWord()
+{
+    dict_page_->queryWord(query_edit_->text());
 }
 
