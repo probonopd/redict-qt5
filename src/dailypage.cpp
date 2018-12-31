@@ -5,13 +5,15 @@
 DailyPage::DailyPage(QWidget *parent)
     : QWidget(parent),
       youdao_api_(new YoudaoAPI),
-      query_edit_(new QLineEdit),
       image_label_(new QLabel),
       title_label_(new QLabel),
       summary_label_(new QLabel),
-      datetime_label_(new QLabel)
+      datetime_label_(new QLabel),
+      stacked_layout_(new QStackedLayout),
+      progress_page_(new ProgressPage)
 {
-    QVBoxLayout *main_layout = new QVBoxLayout;
+    QWidget *main_widget = new QWidget;
+    QVBoxLayout *main_layout = new QVBoxLayout(main_widget);
     QVBoxLayout *content_layout = new QVBoxLayout;
 
     image_label_->setScaledContents(true);
@@ -28,10 +30,17 @@ DailyPage::DailyPage(QWidget *parent)
     main_layout->addSpacing(20);
     main_layout->addStretch();
 
-    setLayout(main_layout);
+    stacked_layout_->addWidget(progress_page_);
+    stacked_layout_->addWidget(main_widget);
+
+    progress_page_->switchToProgress();
+
+    setLayout(stacked_layout_);
 
     connect(youdao_api_, &YoudaoAPI::dailyFinished, this, &DailyPage::handleDailyFinished);
     connect(youdao_api_, &YoudaoAPI::loadImageFinsihed, this, &DailyPage::handleLoadImageFinsihed);
+    connect(youdao_api_, &YoudaoAPI::dailyNetworkError, this, &DailyPage::handleNetworkError);
+    connect(progress_page_, &ProgressPage::reloadButtonClicked, this, &DailyPage::reload);
 
     QTimer::singleShot(100, youdao_api_, &YoudaoAPI::queryDaily);
 }
@@ -50,4 +59,21 @@ void DailyPage::handleLoadImageFinsihed(const QByteArray &data)
     QPixmap pixmap;
     pixmap.loadFromData(data);
     image_label_->setPixmap(pixmap);
+
+    progress_page_->stop();
+    stacked_layout_->setCurrentIndex(1);
+}
+
+void DailyPage::handleNetworkError()
+{
+    stacked_layout_->setCurrentIndex(0);
+    progress_page_->switchToError();
+}
+
+void DailyPage::reload()
+{
+    stacked_layout_->setCurrentIndex(0);
+    progress_page_->switchToProgress();
+
+    QTimer::singleShot(100, youdao_api_, &YoudaoAPI::queryDaily);
 }
