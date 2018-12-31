@@ -44,7 +44,7 @@
     </message>
     <message>
         <location filename="../src/sidebar.cpp" line="13"/>
-        <source>Donates</source>
+        <source>Donate</source>
         <translation>捐款</translation>
     </message>
 </context>
