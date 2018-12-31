@@ -10,6 +10,19 @@
     </message>
 </context>
 <context>
+    <name>DictPage</name>
+    <message>
+        <location filename="../src/dictpage.cpp" line="106"/>
+        <source>UK</source>
+        <translation>英</translation>
+    </message>
+    <message>
+        <location filename="../src/dictpage.cpp" line="115"/>
+        <source>US</source>
+        <translation>美</translation>
+    </message>
+</context>
+<context>
     <name>DonatePage</name>
     <message>
         <location filename="../src/donatepage.cpp" line="12"/>
@@ -20,9 +33,22 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../src/homepage.cpp" line="17"/>
+        <location filename="../src/homepage.cpp" line="18"/>
         <source>Enter the word or phrase you want to query</source>
         <translation>请输入要查询的词语或词组</translation>
+    </message>
+</context>
+<context>
+    <name>ProgressPage</name>
+    <message>
+        <location filename="../src/progresspage.cpp" line="19"/>
+        <source>Unable to access the network.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/progresspage.cpp" line="20"/>
+        <source>Reload</source>
+        <translation>重新加载</translation>
     </message>
 </context>
 <context>

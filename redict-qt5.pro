@@ -39,7 +39,8 @@ SOURCES += \
     src/donatepage.cpp \
     src/widgets/floatdialog.cpp \
     src/progresspage.cpp \
-    src/widgets/spinner.cpp
+    src/widgets/spinner.cpp \
+    src/widgets/imagebutton.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     src/donatepage.h \
     src/widgets/floatdialog.h \
     src/progresspage.h \
-    src/widgets/spinner.h
+    src/widgets/spinner.h \
+    src/widgets/imagebutton.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts
