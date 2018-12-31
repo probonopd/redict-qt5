@@ -1,6 +1,4 @@
 #include "dictpage.h"
-#include <QVBoxLayout>
-#include <QScrollArea>
 #include <QLabel>
 
 DictPage::DictPage(QWidget *parent)
@@ -21,11 +19,10 @@ DictPage::DictPage(QWidget *parent)
     us_voice_label_ = new QLabel;
     uk_voice_label_ = new QLabel;
 
-    QScrollArea *frame = new QScrollArea;
+    frame_ = new QScrollArea;
+    frame_layout_ = new QVBoxLayout;
     QWidget *frame_widget = new QWidget;
-    QVBoxLayout *frame_layout = new QVBoxLayout;
     QVBoxLayout *main_layout = new QVBoxLayout;
-    frame_layout_ = frame_layout;
 
     QHBoxLayout *voice_layout = new QHBoxLayout;
     voice_layout->addWidget(uk_voice_btn_);
@@ -49,22 +46,22 @@ DictPage::DictPage(QWidget *parent)
     word_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
     explains_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
-    frame_layout->setContentsMargins(30, 10, 30, 20);
-    frame_layout->setSpacing(0);
-    frame_layout->addWidget(word_label_);
-    frame_layout->addSpacing(5);
-    frame_layout->addLayout(voice_layout);
-    frame_layout->addSpacing(10);
-    frame_layout->addWidget(explains_label_);
-    frame_layout->addStretch();
-    frame_widget->setLayout(frame_layout);
+    frame_layout_->setContentsMargins(30, 10, 30, 20);
+    frame_layout_->setSpacing(0);
+    frame_layout_->addWidget(word_label_);
+    frame_layout_->addSpacing(5);
+    frame_layout_->addLayout(voice_layout);
+    frame_layout_->addSpacing(10);
+    frame_layout_->addWidget(explains_label_);
+    frame_layout_->addStretch();
+    frame_widget->setLayout(frame_layout_);
 
-    frame->setWidgetResizable(true);
-    frame->setWidget(frame_widget);
+    frame_->setWidgetResizable(true);
+    frame_->setWidget(frame_widget);
 
     main_layout->setMargin(0);
     main_layout->setSpacing(0);
-    main_layout->addWidget(frame);
+    main_layout->addWidget(frame_);
     setLayout(main_layout);
 
     connect(youdao_api_, &YoudaoAPI::searchFinished, this, &DictPage::queryWordFinished);
@@ -74,12 +71,12 @@ DictPage::DictPage(QWidget *parent)
 
 void DictPage::queryWord(const QString &text)
 {
-    uk_voice_btn_->hide();
-    us_voice_btn_->hide();
-    us_voice_label_->hide();
-    uk_voice_label_->hide();
-
     if (text != word_label_->text()) {
+        uk_voice_btn_->hide();
+        us_voice_btn_->hide();
+        us_voice_label_->hide();
+        uk_voice_label_->hide();
+
         youdao_api_->queryWord(text);
     }
 }

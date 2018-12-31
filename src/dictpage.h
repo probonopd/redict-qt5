@@ -2,12 +2,13 @@
 #define DICTPAGE_H
 
 #include <QWidget>
+#include <QVBoxLayout>
+#include <QScrollArea>
 #include <QMediaPlayer>
 #include <QLabel>
 #include "widgets/imagebutton.h"
 #include "youdaoapi.h"
 
-class QVBoxLayout;
 class DictPage : public QWidget
 {
     Q_OBJECT
@@ -36,6 +37,8 @@ private:
     QLabel *uk_voice_label_;
 
     QMediaPlayer *voice_player_;
+
+    QScrollArea *frame_;
 };
 
 #endif // DICTPAGE_H
