@@ -117,6 +117,10 @@ void ImageButton::mouseReleaseEvent(QMouseEvent *e)
         return;
     }
 
+    if (!rect().contains(e->pos())) {
+        return;
+    }
+
     setState(ImageButton::Hover);
 
     emit clicked();
