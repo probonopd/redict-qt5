@@ -49,7 +49,7 @@ DictPage::DictPage(QWidget *parent)
     word_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
     explains_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
-    frame_layout->setContentsMargins(30, 20, 30, 20);
+    frame_layout->setContentsMargins(30, 10, 30, 20);
     frame_layout->setSpacing(0);
     frame_layout->addWidget(word_label_);
     frame_layout->addSpacing(5);
