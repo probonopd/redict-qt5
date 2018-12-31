@@ -6,6 +6,7 @@
 #include "translatepage.h"
 #include "donatepage.h"
 #include "aboutpage.h"
+#include "widgets/floatdialog.h"
 
 class SideBar;
 class QStackedLayout;
@@ -19,6 +20,7 @@ public:
 
 private:
     void initAttributes();
+    void initTesseractOCR();
     void handleSideButtonClicked(int);
 
 private:
@@ -28,6 +30,7 @@ private:
     DonatePage *donate_page_;
     AboutPage *about_page_;
     QStackedLayout *stacked_layout_;
+    FloatDialog *float_dialog_;
 };
 
 #endif // MAINWINDOW_H

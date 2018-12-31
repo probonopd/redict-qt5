@@ -53,6 +53,8 @@ private slots:
 
 private:
     QNetworkAccessManager *access_manager_;
+    QNetworkReply *query_word_reply_;
+    QNetworkReply *translate_reply_;
 };
 
 #endif

@@ -36,7 +36,8 @@ SOURCES += \
     src/aboutpage.cpp \
     src/utils.cpp \
     src/widgets/linkbutton.cpp \
-    src/donatepage.cpp
+    src/donatepage.cpp \
+    src/widgets/floatdialog.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -50,7 +51,8 @@ HEADERS += \
     src/aboutpage.h \
     src/utils.h \
     src/widgets/linkbutton.h \
-    src/donatepage.h
+    src/donatepage.h \
+    src/widgets/floatdialog.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts

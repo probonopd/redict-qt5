@@ -20,7 +20,9 @@ YoudaoAPI* YoudaoAPI::instance()
 
 YoudaoAPI::YoudaoAPI(QObject *parent)
     : QObject(parent),
-      access_manager_(new QNetworkAccessManager)
+      access_manager_(new QNetworkAccessManager),
+      query_word_reply_(nullptr),
+      translate_reply_(nullptr)
 {
 }
 
@@ -41,10 +43,15 @@ void YoudaoAPI::queryWord(const QString &text)
     query.addQueryItem("len", "eng");
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
-    QNetworkRequest request(url);
-    QNetworkReply *reply = access_manager_->get(request);
+    if (query_word_reply_) {
+        query_word_reply_->abort();
+        query_word_reply_->deleteLater();
+    }
 
-    connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleQueryWordFinished);
+    QNetworkRequest request(url);
+    query_word_reply_ = access_manager_->get(request);
+
+    connect(query_word_reply_, &QNetworkReply::finished, this, &YoudaoAPI::handleQueryWordFinished);
 }
 
 void YoudaoAPI::suggest(const QString &text)
@@ -88,10 +95,15 @@ void YoudaoAPI::translate(const QString &text, const QString &type)
     query.addQueryItem("type", type);
     url.setQuery(query.toString(QUrl::FullyEncoded));
 
-    QNetworkRequest request(url);
-    QNetworkReply *reply = access_manager_->get(request);
+    if (translate_reply_) {
+        translate_reply_->abort();
+        translate_reply_->deleteLater();
+    }
 
-    connect(reply, &QNetworkReply::finished, this, &YoudaoAPI::handleTranslateFinished);
+    QNetworkRequest request(url);
+    translate_reply_ = access_manager_->get(request);
+
+    connect(translate_reply_, &QNetworkReply::finished, this, &YoudaoAPI::handleTranslateFinished);
 }
 
 void YoudaoAPI::loadImage(const QString &image_url)

@@ -25,7 +25,7 @@ AboutPage::AboutPage(QWidget *parent)
     copyright_label->setText(QStringLiteral("Copyright © 2019 Unson Wong(Rekols)"));
 
     QLabel *license_label = new QLabel;
-    license_label->setWordWrap(true);
+//    license_label->setWordWrap(true);
     license_label->setText("This project is licensed under version 3 of the GNU General Public License.");
 
     QSvgWidget *youdao_icon = new QSvgWidget(":/images/youdao-dict.svg");
