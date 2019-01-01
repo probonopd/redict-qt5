@@ -13,6 +13,17 @@ QLineEdit:focus {
     border-bottom: 2px solid rgba(66, 133, 244, 100%);
 }
 
+QPlainTextEdit {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 25%);
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
 #SideButton {
     margin: 0;
     text-align: left;
@@ -26,7 +37,6 @@ QLineEdit:focus {
 
 #SideButton:checked {
     color: rgba(50, 115, 220);
-    font-weight: 500;
     background-color: rgba(66, 133, 244, 0.1);
     border: 1px solid rgba(66, 133, 244, 0.1);
     border-left: none;
@@ -62,6 +72,7 @@ QScrollBar::handle:vertical:hover{
 
 LinkButton {
     background-color: transparent;
+    text-align: left;
     border: none;
     color: #0082fa;
 }

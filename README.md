@@ -1,6 +1,6 @@
 # redict-qt5
 
-![](https://api.travis-ci.org/rekols/redict-qt5.svg?branch=master)
+![](https://api.travis-ci.org/rekols/redict.svg?branch=master)
 
 A chinese dictionary based on C++/Qt development.
 

@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QComboBox>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QTimer>
 #include "youdaoapi.h"
 
@@ -25,8 +25,8 @@ private:
     void delayTranslate();
 
 private:
-    QTextEdit *origin_edit_;
-    QTextEdit *translate_edit_;
+    QPlainTextEdit *origin_edit_;
+    QPlainTextEdit *translate_edit_;
     QComboBox *type_combobox_;
     QPushButton *translate_btn_;
     QTimer *m_delayTimer;

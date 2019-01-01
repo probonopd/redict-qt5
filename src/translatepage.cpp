@@ -5,8 +5,8 @@
 
 TranslatePage::TranslatePage(QWidget *parent)
     : QWidget(parent),
-      origin_edit_(new QTextEdit),
-      translate_edit_(new QTextEdit),
+      origin_edit_(new QPlainTextEdit),
+      translate_edit_(new QPlainTextEdit),
       type_combobox_(new QComboBox),
       translate_btn_(new QPushButton),
       m_delayTimer(new QTimer),
@@ -14,6 +14,9 @@ TranslatePage::TranslatePage(QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     QHBoxLayout *translate_layout = new QHBoxLayout;
+
+    translate_btn_->setFixedHeight(35);
+    type_combobox_->setFixedHeight(35);
 
     translate_btn_->setText(tr("Translation"));
     type_combobox_->addItem(tr("Automatic detection"));
@@ -50,7 +53,7 @@ TranslatePage::TranslatePage(QWidget *parent)
     connect(type_combobox_, &QComboBox::currentTextChanged, [=] { translate(); });
     connect(m_delayTimer, &QTimer::timeout, this, &TranslatePage::translate);
 
-    connect(origin_edit_, &QTextEdit::textChanged, [=] {
+    connect(origin_edit_, &QPlainTextEdit::textChanged, [=] {
         if (origin_edit_->toPlainText().isEmpty()) {
             translate_edit_->clear();
         }
