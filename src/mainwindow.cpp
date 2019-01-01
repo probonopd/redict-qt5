@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
       float_dialog_(new FloatDialog)
 {
     initAttributes();
-    initTesseractOCR();
+    // initTesseractOCR();
 }
 
 MainWindow::~MainWindow()

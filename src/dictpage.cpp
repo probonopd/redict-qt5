@@ -113,7 +113,16 @@ void DictPage::queryWordFinished(std::tuple<QString, QString, QString, QString, 
     }
 
     word_label_->setText(word);
-    explains_label_->setText(basic_explains + web_references);
+
+    QString contents;
+    if (!basic_explains.isEmpty()) {
+        contents += basic_explains;
+        contents += "<br></br>";
+    }
+
+    contents += web_references;
+
+    explains_label_->setText(contents);
 }
 
 void DictPage::playUSVoice()

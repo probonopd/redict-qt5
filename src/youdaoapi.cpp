@@ -169,9 +169,8 @@ void YoudaoAPI::handleQueryWordFinished()
                 QJsonArray arr = obj.value(key).toArray();
 
                 for (const QJsonValue &value : arr) {
-                    webReferences += "<br>";
                     webReferences += QString("• %1 : %2").arg(key).arg(value.toString());
-                    webReferences += "</br>";
+                    webReferences += "<br></br>";
                 }
             }
         }
