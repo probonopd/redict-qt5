@@ -6,7 +6,7 @@ A chinese dictionary based on C++/Qt development.
 
 ## Build dependencies
 
-`sudo apt install g++ qt5-default libqt5multimedia5 libqt5svg5-dev`
+`sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev`
 
 ## Installation
 
