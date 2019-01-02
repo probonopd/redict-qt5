@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "sidebar.h"
+#include "utils.h"
+
 #include <QHBoxLayout>
 #include <QStackedLayout>
 #include <QApplication>
@@ -40,7 +42,11 @@ void MainWindow::initAttributes()
     stacked_layout_->addWidget(home_page_);
     stacked_layout_->addWidget(translate_page_);
     stacked_layout_->addWidget(settings_page_);
-    stacked_layout_->addWidget(donate_page_);
+
+    if (Utils::isChinese()) {
+        stacked_layout_->addWidget(donate_page_);
+    }
+
     stacked_layout_->addWidget(about_page_);
 
     main_layout->setMargin(0);

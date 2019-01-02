@@ -1,4 +1,5 @@
 #include "sidebar.h"
+#include "utils.h"
 #include "sidebutton.h"
 #include <QPainter>
 
@@ -11,8 +12,11 @@ SideBar::SideBar(QWidget *parent)
     main_layout_->setSpacing(0);
 
     button_list_ << tr("Home") << tr("Translation")
-                 << tr("Setttings") << tr("Donate")
-                 << tr("About");
+                 << tr("Setttings") << tr("About");
+
+    if (Utils::isChinese()) {
+        button_list_.insert(3, tr("Donate"));
+    }
 
     setObjectName("SideBar");
     setFixedWidth(150);

@@ -11,6 +11,7 @@ public:
     explicit Utils(QObject *parent = nullptr);
 
     static QPixmap renderSVG(const QString &path, const QSize &size);
+    static bool isChinese();
 };
 
 #endif // UTILS_H

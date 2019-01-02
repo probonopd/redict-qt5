@@ -27,7 +27,7 @@ QPixmap Utils::renderSVG(const QString &path, const QSize &size)
     return pixmap;
 }
 
-bool Utils::isChinese() const
+bool Utils::isChinese()
 {
     QLocale locale;
 
