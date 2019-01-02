@@ -29,6 +29,12 @@ A chinese dictionary based on C++/Qt development.
 
 [AppImageHub](https://appimage.github.io/Redict)
 
+## Getting involved
+
+We encourage you to report issues and contribute changes.
+
+* [Translate for your language on Transifex](https://www.transifex.com/resoft/redict-1)
+
 ## License
 
 ![](https://camo.githubusercontent.com/3eb103d4afbd5bb2bbdf3d03e0e23e05ef44190f/687474703a2f2f7777772e676e752e6f72672f67726170686963732f67706c76332d3132377835312e706e67)
