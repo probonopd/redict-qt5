@@ -40,7 +40,8 @@ SOURCES += \
     src/widgets/floatdialog.cpp \
     src/progresspage.cpp \
     src/widgets/spinner.cpp \
-    src/widgets/imagebutton.cpp
+    src/widgets/imagebutton.cpp \
+    src/widgets/contentframe.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -58,7 +59,8 @@ HEADERS += \
     src/widgets/floatdialog.h \
     src/progresspage.h \
     src/widgets/spinner.h \
-    src/widgets/imagebutton.h
+    src/widgets/imagebutton.h \
+    src/widgets/contentframe.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts

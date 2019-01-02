@@ -2,7 +2,7 @@
 #include <QLabel>
 
 DictPage::DictPage(QWidget *parent)
-    : QWidget(parent),
+    : ContentFrame(parent),
       youdao_api_(new YoudaoAPI),
       word_label_(new QLabel),
       explains_label_(new QLabel),
@@ -19,10 +19,7 @@ DictPage::DictPage(QWidget *parent)
     us_voice_label_ = new QLabel;
     uk_voice_label_ = new QLabel;
 
-    frame_ = new QScrollArea;
     frame_layout_ = new QVBoxLayout;
-    QWidget *frame_widget = new QWidget;
-    QVBoxLayout *main_layout = new QVBoxLayout;
 
     QHBoxLayout *voice_layout = new QHBoxLayout;
     voice_layout->addWidget(uk_voice_btn_);
@@ -54,15 +51,8 @@ DictPage::DictPage(QWidget *parent)
     frame_layout_->addSpacing(10);
     frame_layout_->addWidget(explains_label_);
     frame_layout_->addStretch();
-    frame_widget->setLayout(frame_layout_);
 
-    frame_->setWidgetResizable(true);
-    frame_->setWidget(frame_widget);
-
-    main_layout->setMargin(0);
-    main_layout->setSpacing(0);
-    main_layout->addWidget(frame_);
-    setLayout(main_layout);
+    addLayout(frame_layout_);
 
     connect(youdao_api_, &YoudaoAPI::searchFinished, this, &DictPage::queryWordFinished);
     connect(us_voice_btn_, &ImageButton::clicked, this, &DictPage::playUSVoice);

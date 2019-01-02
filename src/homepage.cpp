@@ -42,7 +42,7 @@ void HomePage::handleTextEdited()
 void HomePage::handleEditReturnPressed()
 {
     query_edit_->selectAll();
-    handleTextEdited();
+    queryWord();
 }
 
 void HomePage::queryWord()
