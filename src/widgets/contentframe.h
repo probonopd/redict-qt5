@@ -16,6 +16,7 @@ public:
     void addStretch(int stretch = 0);
     void addWidget(QWidget *, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
     void addLayout(QLayout *layout, int stretch = 0);
+    void setContentsMargins(int left, int top, int right, int bottom);
 
 private:
     QWidget *content_widget_;

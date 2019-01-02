@@ -16,6 +16,7 @@ ContentFrame::ContentFrame(QWidget *parent)
     scroll_area_->setWidgetResizable(true);
     scroll_area_->setContentsMargins(0, 0, 0, 0);
 
+    layout->setContentsMargins(30, 10, 30, 20);
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->addWidget(scroll_area_);
@@ -41,4 +42,9 @@ void ContentFrame::addWidget(QWidget *w, int stretch, Qt::Alignment alignment)
 void ContentFrame::addLayout(QLayout *layout, int stretch)
 {
     content_layout_->addLayout(layout, stretch);
+}
+
+void ContentFrame::setContentsMargins(int left, int top, int right, int bottom)
+{
+    content_layout_->setContentsMargins(left, top, right, bottom);
 }

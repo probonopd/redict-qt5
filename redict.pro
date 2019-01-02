@@ -67,7 +67,8 @@ HEADERS += \
     src/widgets/trayicon.h
 
 TRANSLATIONS += translations/redict.ts \
-                translations/redict_zh_CN.ts
+                translations/redict_zh_CN.ts \
+                translations/redict.de_DE.ts
 
 unix: system($$PWD/update_translations.sh)
 
