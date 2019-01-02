@@ -65,6 +65,12 @@ TRANSLATIONS += translations/redict.ts \
 
 RESOURCES += resources.qrc
 
+# Automating generation .qm files from .ts files
+# Automating generation .qm files from .ts files
+CONFIG(release, debug|release) {
+    system($$PWD/generate_translations.sh)
+}
+
 isEmpty(BINDIR):BINDIR=/usr/bin
 isEmpty(APPDIR):APPDIR=/usr/share/applications
 isEmpty(DSRDIR):DSRDIR=/usr/share/redict
@@ -73,7 +79,10 @@ target.path = $$INSTROOT$$BINDIR
 icon_files.path = $$PREFIX/share/icons/hicolor/scalable/apps/
 icon_files.files = $$PWD/images/redict.svg
 
+translations.path = $$PREFIX/share/redict/translations
+translations.files = translations/*.qm
+
 desktop.path = $$INSTROOT$$APPDIR
 desktop.files = redict.desktop
 
-INSTALLS += target desktop icon_files
+INSTALLS += target desktop icon_files translations

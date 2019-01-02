@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 #endif
 
     QTranslator translator;
-    if (translator.load(QString(":/translations/redict_%1.qm")
+    if (translator.load(QString("/usr/share/redict/translations/redict_%1.qm")
                         .arg(QLocale::system().name()))) {
         qApp->installTranslator(&translator);
     }

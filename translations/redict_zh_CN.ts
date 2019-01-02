@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/donatepage.cpp" line="12"/>
         <source>Welcome to donate to me</source>
-        <translation>欢迎捐助我</translation>
+        <translation>欢迎捐助</translation>
     </message>
 </context>
 <context>
@@ -43,7 +43,7 @@
     <message>
         <location filename="../src/progresspage.cpp" line="19"/>
         <source>Unable to access the network.</source>
-        <translation type="unfinished"></translation>
+        <translation>不能访问网络</translation>
     </message>
     <message>
         <location filename="../src/progresspage.cpp" line="20"/>

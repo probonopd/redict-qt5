@@ -4,8 +4,6 @@
         <file>images/youdao-dict.svg</file>
         <file>images/alipay.png</file>
         <file>qss/style.qss</file>
-        <file>translations/redict.qm</file>
-        <file>translations/redict_zh_CN.qm</file>
         <file>images/network_error.svg</file>
         <file>images/audio-normal.svg</file>
         <file>images/audio-press.svg</file>
