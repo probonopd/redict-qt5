@@ -13,13 +13,18 @@ class UrbanAPI : public QObject
 public:
     UrbanAPI(QObject *parent = nullptr);
 
+    void queryText(const QString &text);
     void queryWordOfTheToday();
 
 signals:
     void queryWordOfTheTodayFinished(QString, QString, QString);
 
+    // word, definition, example, author, datetime
+    void queryTextFinished(QString, QString, QString, QString, QString);
+
 private:
     void handlWordOfTheTodayFinished();
+    void handleQueryTextFinished();
 
 private:
     QNetworkAccessManager *access_manager_;

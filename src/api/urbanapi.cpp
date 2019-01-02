@@ -8,7 +8,16 @@ UrbanAPI::UrbanAPI(QObject *parent)
     : QObject(parent),
       access_manager_(new QNetworkAccessManager)
 {
-    queryWordOfTheToday();
+    queryText("api");
+}
+
+void UrbanAPI::queryText(const QString &text)
+{
+    QUrl url("http://api.urbandictionary.com/v0/define?term=" + text);
+    QNetworkRequest request(url);
+    QNetworkReply *reply = access_manager_->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, &UrbanAPI::handleQueryTextFinished);
 }
 
 void UrbanAPI::queryWordOfTheToday()
@@ -34,4 +43,32 @@ void UrbanAPI::handlWordOfTheTodayFinished()
     QString example = document.object().value("example").toString().remove('\n');
 
     emit queryWordOfTheTodayFinished(word, meaning, example);
+}
+
+void UrbanAPI::handleQueryTextFinished()
+{
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+
+    if (reply->error() != QNetworkReply::NoError) {
+        return;
+    }
+
+    QJsonDocument document = QJsonDocument::fromJson(reply->readAll());
+    QJsonArray list_obj = document.object().value("list").toArray();
+    QString definition;
+    QString example;
+    QString word;
+    QString author;
+    QString datetime;
+
+    if (list_obj.size() > 0) {
+        QJsonObject obj = list_obj.first().toObject();
+        definition = obj.value("definition").toString();
+        example = obj.value("example").toString();
+        word = obj.value("word").toString();
+        author = obj.value("author").toString();
+        datetime = obj.value("written_on").toString();
+    }
+
+    emit queryTextFinished(word, definition, example, author, datetime);
 }
