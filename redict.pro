@@ -63,13 +63,12 @@ HEADERS += \
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts
 
-RESOURCES += resources.qrc
+update_ts.commands = lupdate
+release_ts.commands = lrelease
+release_ts.depends = update_ts
+QMAKE_EXTRA_TARGETS += update_ts release_ts
 
-# Automating generation .qm files from .ts files
-# Automating generation .qm files from .ts files
-CONFIG(release, debug|release) {
-    system($$PWD/generate_translations.sh)
-}
+unix: system($$PWD/update_translations.sh)
 
 isEmpty(BINDIR):BINDIR=/usr/bin
 isEmpty(APPDIR):APPDIR=/usr/share/applications
@@ -79,10 +78,8 @@ target.path = $$INSTROOT$$BINDIR
 icon_files.path = $$PREFIX/share/icons/hicolor/scalable/apps/
 icon_files.files = $$PWD/images/redict.svg
 
-translations.path = $$PREFIX/share/redict/translations
-translations.files = translations/*.qm
-
 desktop.path = $$INSTROOT$$APPDIR
 desktop.files = redict.desktop
 
-INSTALLS += target desktop icon_files translations
+RESOURCES += resources.qrc
+INSTALLS += target desktop icon_files

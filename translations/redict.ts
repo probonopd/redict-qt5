@@ -12,12 +12,12 @@
 <context>
     <name>DictPage</name>
     <message>
-        <location filename="../src/dictpage.cpp" line="106"/>
+        <location filename="../src/dictpage.cpp" line="103"/>
         <source>UK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dictpage.cpp" line="115"/>
+        <location filename="../src/dictpage.cpp" line="112"/>
         <source>US</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,52 +77,52 @@
 <context>
     <name>TranslatePage</name>
     <message>
-        <location filename="../src/translatepage.cpp" line="18"/>
+        <location filename="../src/translatepage.cpp" line="21"/>
         <source>Translation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="19"/>
+        <location filename="../src/translatepage.cpp" line="22"/>
         <source>Automatic detection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="20"/>
+        <location filename="../src/translatepage.cpp" line="23"/>
         <source>Chinese to English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="21"/>
+        <location filename="../src/translatepage.cpp" line="24"/>
         <source>Chinese to Japanese</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="22"/>
+        <location filename="../src/translatepage.cpp" line="25"/>
         <source>Chinese to Korean</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="23"/>
+        <location filename="../src/translatepage.cpp" line="26"/>
         <source>Chinese to French</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="24"/>
+        <location filename="../src/translatepage.cpp" line="27"/>
         <source>Chinese to Russian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="25"/>
+        <location filename="../src/translatepage.cpp" line="28"/>
         <source>Chinese to Spanish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="26"/>
+        <location filename="../src/translatepage.cpp" line="29"/>
         <source>English to Chinese</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/translatepage.cpp" line="42"/>
+        <location filename="../src/translatepage.cpp" line="45"/>
         <source>Please enter the text you want to translate</source>
         <translation type="unfinished"></translation>
     </message>

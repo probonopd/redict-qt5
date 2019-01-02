@@ -8,5 +8,7 @@
         <file>images/audio-normal.svg</file>
         <file>images/audio-press.svg</file>
         <file>images/audio-hover.svg</file>
+
+        <file>translations/redict_zh_CN.qm</file>
     </qresource>
 </RCC>
