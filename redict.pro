@@ -28,7 +28,7 @@ SOURCES += \
     src/mainwindow.cpp \
     src/sidebar.cpp \
     src/sidebutton.cpp \
-    src/youdaoapi.cpp \
+    src/api/youdaoapi.cpp \
     src/homepage.cpp \
     src/dictpage.cpp \
     src/dailypage.cpp \
@@ -44,13 +44,16 @@ SOURCES += \
     src/widgets/contentframe.cpp \
     src/settingspage.cpp \
     src/widgets/trayicon.cpp \
-    src/widgets/youdaodictwidget.cpp
+    src/widgets/youdaodictwidget.cpp \
+    src/api/urbanapi.cpp \
+    src/widgets/urbandailywidget.cpp \
+    src/widgets/youdaodailywidget.cpp
 
 HEADERS += \
     src/mainwindow.h \
     src/sidebar.h \
     src/sidebutton.h \
-    src/youdaoapi.h \
+    src/api/youdaoapi.h \
     src/homepage.h \
     src/dictpage.h \
     src/dailypage.h \
@@ -66,7 +69,10 @@ HEADERS += \
     src/widgets/contentframe.h \
     src/settingspage.h \
     src/widgets/trayicon.h \
-    src/widgets/youdaodictwidget.h
+    src/widgets/youdaodictwidget.h \
+    src/api/urbanapi.h \
+    src/widgets/urbandailywidget.h \
+    src/widgets/youdaodailywidget.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts \

@@ -3,7 +3,7 @@
 
 #include "contentframe.h"
 #include "imagebutton.h"
-#include "../youdaoapi.h"
+#include "../api/youdaoapi.h"
 
 #include <QMediaPlayer>
 #include <QLabel>

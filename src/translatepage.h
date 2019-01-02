@@ -6,7 +6,7 @@
 #include <QComboBox>
 #include <QPlainTextEdit>
 #include <QTimer>
-#include "youdaoapi.h"
+#include "api/youdaoapi.h"
 
 class TranslatePage : public QWidget
 {

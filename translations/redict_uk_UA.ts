@@ -12,14 +12,12 @@
 <context>
     <name>DictPage</name>
     <message>
-        <location filename="../src/dictpage.cpp" line="93"/>
         <source>UK</source>
-        <translation>UK</translation>
+        <translation type="vanished">UK</translation>
     </message>
     <message>
-        <location filename="../src/dictpage.cpp" line="102"/>
         <source>US</source>
-        <translation>US</translation>
+        <translation type="vanished">US</translation>
     </message>
 </context>
 <context>
@@ -150,6 +148,19 @@
         <location filename="../src/widgets/trayicon.cpp" line="7"/>
         <source>Exit</source>
         <translation>Вийти</translation>
+    </message>
+</context>
+<context>
+    <name>YoudaoDictWidget</name>
+    <message>
+        <location filename="../src/widgets/youdaodictwidget.cpp" line="78"/>
+        <source>UK</source>
+        <translation type="unfinished">UK</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/youdaodictwidget.cpp" line="87"/>
+        <source>US</source>
+        <translation type="unfinished">US</translation>
     </message>
 </context>
 </TS>
