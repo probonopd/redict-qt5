@@ -4,6 +4,16 @@
 #include <QTranslator>
 #include <QFile>
 
+#ifdef Q_OS_LINUX
+#include <QDateTime>
+#include <QFileInfo>
+#include <QSettings>
+#include <QDir>
+#include <unistd.h>
+#elif defined(Q_OS_WIN)
+#include <windows.h>
+#endif
+
 inline QByteArray get_file_content(const QString &file_name)
 {
     QFile file(file_name);
@@ -34,7 +44,24 @@ int main(int argc, char *argv[])
     a.setOrganizationName("rekols");
     a.setApplicationName("redict");
 
-#ifdef Q_OS_WIN
+#ifdef Q_OS_UNIX
+    QSettings lock_file(QDir::homePath() + "/.redict/redict.pid", QSettings::IniFormat);
+    QString last_pid = lock_file.value("LastStart/pid").toString();
+    if (last_pid.length() && QDir("/proc/" + last_pid).exists() &&
+        lock_file.value("LastStart/time").toDateTime() == QFileInfo("/proc/" + last_pid).created())
+    {
+        qWarning() << "redict already running";
+        return 0;
+    }
+    lock_file.setValue("LastStart/pid", getpid());
+    lock_file.setValue("LastStart/time", QFileInfo("/proc/" + QString::number(getpid())).created());
+    lock_file.sync();
+#elif defined(Q_OS_WIN)
+    HANDLE hMutex = CreateMutex(NULL, true, (LPCTSTR)"redict");
+    if (GetLastError() == ERROR_ALREADY_EXISTS) {
+        return 0;
+    }
+
     QFont font = a.font();
     font.setFamily("Microsoft Yahei");
     a.setFont(font);
