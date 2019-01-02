@@ -10,6 +10,7 @@
         <file>images/audio-hover.svg</file>
 
         <file>translations/redict_zh_CN.qm</file>
-        <file>translations/redict.de_DE.qm</file>
+        <file>translations/redict_de_DE.qm</file>
+        <file>translations/redict_uk_UA.qm</file>
     </qresource>
 </RCC>
