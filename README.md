@@ -4,6 +4,8 @@
 
 A chinese dictionary based on C++/Qt development.
 
+![](https://appimage.github.io/database/Redict/screenshot.png)
+
 ## Build dependencies
 
 `sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev`
@@ -25,9 +27,9 @@ A chinese dictionary based on C++/Qt development.
 
 ## Build appimage package
 
-![AppImageHub](https://appimage.github.io/Redict/)
-
 `./build_appimage.sh`
+
+[AppImageHub](https://appimage.github.io/Redict)
 
 ## License
 
