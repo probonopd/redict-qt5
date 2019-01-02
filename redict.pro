@@ -43,7 +43,8 @@ SOURCES += \
     src/widgets/imagebutton.cpp \
     src/widgets/contentframe.cpp \
     src/settingspage.cpp \
-    src/widgets/trayicon.cpp
+    src/widgets/trayicon.cpp \
+    src/widgets/youdaodictwidget.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -64,7 +65,8 @@ HEADERS += \
     src/widgets/imagebutton.h \
     src/widgets/contentframe.h \
     src/settingspage.h \
-    src/widgets/trayicon.h
+    src/widgets/trayicon.h \
+    src/widgets/youdaodictwidget.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts \

@@ -114,6 +114,7 @@ void MainWindow::initTrayIcon()
     if (settings_page_->option("tray_icon").toBool()) {
         tray_icon_->show();
     } else {
+        // Ubuntu 18.10 is invalid !!!
         tray_icon_->hide();
     }
 }

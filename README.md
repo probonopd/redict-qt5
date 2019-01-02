@@ -1,6 +1,6 @@
 # Redict ![](https://api.travis-ci.org/rekols/redict.svg?branch=master)
 
-A dictionary based on C++/Qt development.
+A dictionary for Linux, based on C++/Qt development.
 
 ![](screenshots/screenshot1.png)
 
