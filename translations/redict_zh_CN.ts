@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/settingspage.cpp" line="25"/>
         <source>Turn on the system tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation>开启托盘图标</translation>
     </message>
 </context>
 <context>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../src/sidebar.cpp" line="14"/>
         <source>Setttings</source>
-        <translation type="unfinished"></translation>
+        <translation>设置</translation>
     </message>
 </context>
 <context>
@@ -145,12 +145,12 @@
     <message>
         <location filename="../src/widgets/trayicon.cpp" line="6"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>打开</translation>
     </message>
     <message>
         <location filename="../src/widgets/trayicon.cpp" line="7"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>退出</translation>
     </message>
 </context>
 </TS>
