@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../src/aboutpage.cpp" line="22"/>
         <source>Version</source>
-        <translation>Version</translation>
+        <translation>Версія</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/donatepage.cpp" line="12"/>
         <source>Welcome to donate to me</source>
-        <translation>Danke für Spenden an mich</translation>
+        <translation>Буду вдячний за пожертви</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/homepage.cpp" line="18"/>
         <source>Enter the word or phrase you want to query</source>
-        <translation>Zu übersetzendes Wort oder Satz eingeben</translation>
+        <translation>Введіть слово чи фразу яку ви хочете перекласти</translation>
     </message>
 </context>
 <context>
@@ -43,12 +43,12 @@
     <message>
         <location filename="../src/progresspage.cpp" line="19"/>
         <source>Unable to access the network.</source>
-        <translation>Kann nicht auf das Netzwerk zugreifen.</translation>
+        <translation>Відсутній доступ до мережі.</translation>
     </message>
     <message>
         <location filename="../src/progresspage.cpp" line="20"/>
         <source>Reload</source>
-        <translation>Neu laden</translation>
+        <translation>Перезавантажити</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/settingspage.cpp" line="25"/>
         <source>Turn on the system tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути іконку в системному лотку</translation>
     </message>
 </context>
 <context>
@@ -64,27 +64,27 @@
     <message>
         <location filename="../src/sidebar.cpp" line="13"/>
         <source>Home</source>
-        <translation>Startseite</translation>
+        <translation>Головна</translation>
     </message>
     <message>
         <location filename="../src/sidebar.cpp" line="13"/>
         <source>Translation</source>
-        <translation>Übersetzung</translation>
-    </message>
-    <message>
-        <location filename="../src/sidebar.cpp" line="14"/>
-        <source>Setttings</source>
-        <translation type="unfinished"></translation>
+        <translation>Переклад</translation>
     </message>
     <message>
         <location filename="../src/sidebar.cpp" line="15"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>Про</translation>
     </message>
     <message>
         <location filename="../src/sidebar.cpp" line="14"/>
         <source>Donate</source>
-        <translation>Spenden</translation>
+        <translation>Пожертвування</translation>
+    </message>
+    <message>
+        <location filename="../src/sidebar.cpp" line="14"/>
+        <source>Setttings</source>
+        <translation>Налаштування</translation>
     </message>
 </context>
 <context>
@@ -92,52 +92,52 @@
     <message>
         <location filename="../src/translatepage.cpp" line="21"/>
         <source>Translation</source>
-        <translation>Übersetzung</translation>
+        <translation>Переклад</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="22"/>
         <source>Automatic detection</source>
-        <translation>Automatische Erkennung</translation>
+        <translation>Автоматичне визначення</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="23"/>
         <source>Chinese to English</source>
-        <translation>Chinesisch zu Englisch</translation>
+        <translation>З китайської на англійську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="24"/>
         <source>Chinese to Japanese</source>
-        <translation>Chinesisch zu Japanisch</translation>
+        <translation>З китайської на японську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="25"/>
         <source>Chinese to Korean</source>
-        <translation>Chinesisch zu Koreanisch</translation>
+        <translation>З китайської на корейську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="26"/>
         <source>Chinese to French</source>
-        <translation>Chinesisch zu Französisch</translation>
+        <translation>З китайської на французьку</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="27"/>
         <source>Chinese to Russian</source>
-        <translation>Chinesisch zu Russisch</translation>
+        <translation>З китайської на російську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="28"/>
         <source>Chinese to Spanish</source>
-        <translation>Chinesisch zu Spanisch</translation>
+        <translation>З китайської на іспанську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="29"/>
         <source>English to Chinese</source>
-        <translation>Englisch zu Chinesisch</translation>
+        <translation>З англійської на китайську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="45"/>
         <source>Please enter the text you want to translate</source>
-        <translation>Bitte geben Sie den zu übersetzenden Text ein</translation>
+        <translation>Будь-ласка, введіть текст котрий потрібно перекласти</translation>
     </message>
 </context>
 <context>
@@ -145,12 +145,12 @@
     <message>
         <location filename="../src/widgets/trayicon.cpp" line="6"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити</translation>
     </message>
     <message>
         <location filename="../src/widgets/trayicon.cpp" line="7"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Вийти</translation>
     </message>
 </context>
 </TS>
