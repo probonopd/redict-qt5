@@ -1,6 +1,4 @@
-# Redict
-
-![](https://api.travis-ci.org/rekols/redict.svg?branch=master)
+# Redict ![](https://api.travis-ci.org/rekols/redict.svg?branch=master)
 
 A chinese dictionary based on C++/Qt development.
 
@@ -21,11 +19,11 @@ A chinese dictionary based on C++/Qt development.
 
 `./redict`
 
-## Build debian package
+## Build Debian Package
 
 `dpkg-buildpackage -b -j`
 
-## Build appimage package
+## Build AppImage Package
 
 `./build_appimage.sh`
 
