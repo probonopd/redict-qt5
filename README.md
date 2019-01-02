@@ -1,4 +1,4 @@
-# redict
+# Redict
 
 ![](https://api.travis-ci.org/rekols/redict.svg?branch=master)
 
@@ -6,7 +6,7 @@ A chinese dictionary based on C++/Qt development.
 
 ## Build dependencies
 
-`$ sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev`
+`sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev`
 
 ## Installation
 
@@ -17,15 +17,17 @@ A chinese dictionary based on C++/Qt development.
 
 ## Usage
 
-`$ ./redict`
+`./redict`
 
 ## Build debian package
 
-`$ dpkg-buildpackage -b -j`
+`dpkg-buildpackage -b -j`
 
 ## Build appimage package
 
-`$ ./build_appimage.sh`
+![AppImageHub](https://appimage.github.io/Redict/)
+
+`./build_appimage.sh`
 
 ## License
 
