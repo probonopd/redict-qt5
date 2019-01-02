@@ -63,11 +63,6 @@ HEADERS += \
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts
 
-update_ts.commands = lupdate
-release_ts.commands = lrelease
-release_ts.depends = update_ts
-QMAKE_EXTRA_TARGETS += update_ts release_ts
-
 unix: system($$PWD/update_translations.sh)
 
 isEmpty(BINDIR):BINDIR=/usr/bin
