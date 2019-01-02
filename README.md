@@ -2,7 +2,7 @@
 
 A chinese dictionary based on C++/Qt development.
 
-![](https://appimage.github.io/database/Redict/screenshot.png)
+![](screenshots/screenshot1.png)
 
 ## Build dependencies
 
