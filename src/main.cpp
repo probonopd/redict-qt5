@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setStyleSheet(get_file_content(":/qss/style.qss"));
+    a.setOrganizationName("rekols");
+    a.setApplicationName("redict");
 
 #ifdef Q_OS_WIN
     QFont font = a.font();

@@ -10,7 +10,9 @@ SideBar::SideBar(QWidget *parent)
     main_layout_->setContentsMargins(0, 0, 2, 0);
     main_layout_->setSpacing(0);
 
-    button_list_ << tr("Home") << tr("Translation") << tr("Donate") << tr("About");
+    button_list_ << tr("Home") << tr("Translation")
+                 << tr("Setttings") << tr("Donate")
+                 << tr("About");
 
     setObjectName("SideBar");
     setFixedWidth(150);

@@ -41,7 +41,9 @@ SOURCES += \
     src/progresspage.cpp \
     src/widgets/spinner.cpp \
     src/widgets/imagebutton.cpp \
-    src/widgets/contentframe.cpp
+    src/widgets/contentframe.cpp \
+    src/settingspage.cpp \
+    src/widgets/trayicon.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -60,7 +62,9 @@ HEADERS += \
     src/progresspage.h \
     src/widgets/spinner.h \
     src/widgets/imagebutton.h \
-    src/widgets/contentframe.h
+    src/widgets/contentframe.h \
+    src/settingspage.h \
+    src/widgets/trayicon.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts

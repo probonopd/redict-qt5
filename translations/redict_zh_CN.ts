@@ -12,12 +12,12 @@
 <context>
     <name>DictPage</name>
     <message>
-        <location filename="../src/dictpage.cpp" line="103"/>
+        <location filename="../src/dictpage.cpp" line="93"/>
         <source>UK</source>
         <translation>英</translation>
     </message>
     <message>
-        <location filename="../src/dictpage.cpp" line="112"/>
+        <location filename="../src/dictpage.cpp" line="102"/>
         <source>US</source>
         <translation>美</translation>
     </message>
@@ -52,6 +52,14 @@
     </message>
 </context>
 <context>
+    <name>SettingsPage</name>
+    <message>
+        <location filename="../src/settingspage.cpp" line="25"/>
+        <source>Turn on the system tray icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SideBar</name>
     <message>
         <location filename="../src/sidebar.cpp" line="13"/>
@@ -64,14 +72,19 @@
         <translation>翻译</translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="15"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="14"/>
         <source>Donate</source>
         <translation>捐款</translation>
+    </message>
+    <message>
+        <location filename="../src/sidebar.cpp" line="14"/>
+        <source>Setttings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -125,6 +138,19 @@
         <location filename="../src/translatepage.cpp" line="45"/>
         <source>Please enter the text you want to translate</source>
         <translation>请输入您要查询的文字</translation>
+    </message>
+</context>
+<context>
+    <name>TrayIcon</name>
+    <message>
+        <location filename="../src/widgets/trayicon.cpp" line="6"/>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/trayicon.cpp" line="7"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

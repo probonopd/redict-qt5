@@ -12,13 +12,16 @@ MainWindow::MainWindow(QWidget *parent)
       side_bar_(new SideBar),
       home_page_(new HomePage),
       translate_page_(new TranslatePage),
+      settings_page_(new SettingsPage),
       donate_page_(new DonatePage),
       about_page_(new AboutPage),
       stacked_layout_(new QStackedLayout),
-      float_dialog_(new FloatDialog)
+      float_dialog_(new FloatDialog),
+      tray_icon_(new TrayIcon)
 {
     initAttributes();
     // initTesseractOCR();
+    initTrayIcon();
 }
 
 MainWindow::~MainWindow()
@@ -36,6 +39,7 @@ void MainWindow::initAttributes()
 
     stacked_layout_->addWidget(home_page_);
     stacked_layout_->addWidget(translate_page_);
+    stacked_layout_->addWidget(settings_page_);
     stacked_layout_->addWidget(donate_page_);
     stacked_layout_->addWidget(about_page_);
 
@@ -51,6 +55,9 @@ void MainWindow::initAttributes()
     setFixedSize(705, 455);
 
     connect(side_bar_, &SideBar::buttonClicked, this, &MainWindow::handleSideButtonClicked);
+    connect(settings_page_, &SettingsPage::trayStateChanged, this, &MainWindow::initTrayIcon);
+    connect(tray_icon_, &TrayIcon::openActionTriggered, this, &MainWindow::toggleWindowVisible);
+    connect(tray_icon_, &TrayIcon::exitActionTriggered, qApp, &QApplication::quit);
 }
 
 void MainWindow::initTesseractOCR()
@@ -96,7 +103,36 @@ void MainWindow::initTesseractOCR()
 #endif
 }
 
+void MainWindow::initTrayIcon()
+{
+    if (settings_page_->option("tray_icon").toBool()) {
+        tray_icon_->show();
+    } else {
+        tray_icon_->hide();
+    }
+}
+
+void MainWindow::toggleWindowVisible()
+{
+    if (isVisible()) {
+        QMainWindow::setVisible(false);
+    } else {
+        QMainWindow::setVisible(true);
+        QMainWindow::activateWindow();
+    }
+}
+
 void MainWindow::handleSideButtonClicked(int index)
 {
     stacked_layout_->setCurrentIndex(index);
+}
+
+void MainWindow::closeEvent(QCloseEvent *e)
+{
+    if (settings_page_->option("tray_icon").toBool()) {
+        QMainWindow::setVisible(false);
+        e->ignore();
+    } else {
+        e->accept();
+    }
 }
