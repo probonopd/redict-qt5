@@ -64,3 +64,16 @@ TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts
 
 RESOURCES += resources.qrc
+
+isEmpty(BINDIR):BINDIR=/usr/bin
+isEmpty(APPDIR):APPDIR=/usr/share/applications
+isEmpty(DSRDIR):DSRDIR=/usr/share/redict
+
+target.path = $$INSTROOT$$BINDIR
+icon_files.path = $$PREFIX/share/icons/hicolor/scalable/apps/
+icon_files.files = $$PWD/images/redict.svg
+
+desktop.path = $$INSTROOT$$APPDIR
+desktop.files = redict.desktop
+
+INSTALLS += target desktop icon_files

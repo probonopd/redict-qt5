@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 qmake CONFIG+=release PREFIX=/usr
 make -j$(nproc)
