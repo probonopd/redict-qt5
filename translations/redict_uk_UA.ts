@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/translatepage.cpp" line="27"/>
         <source>Chinese to Russian</source>
-        <translation>З китайсьокї на російську</translation>
+        <translation>З китайської на російську</translation>
     </message>
     <message>
         <location filename="../src/translatepage.cpp" line="28"/>
