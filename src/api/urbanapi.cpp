@@ -8,7 +8,6 @@ UrbanAPI::UrbanAPI(QObject *parent)
     : QObject(parent),
       access_manager_(new QNetworkAccessManager)
 {
-    queryText("api");
 }
 
 void UrbanAPI::queryText(const QString &text)
@@ -69,6 +68,8 @@ void UrbanAPI::handleQueryTextFinished()
         author = obj.value("author").toString();
         datetime = obj.value("written_on").toString();
     }
+
+    qDebug() << definition;
 
     emit queryTextFinished(word, definition, example, author, datetime);
 }

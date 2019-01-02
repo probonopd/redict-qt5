@@ -47,7 +47,8 @@ SOURCES += \
     src/widgets/youdaodictwidget.cpp \
     src/api/urbanapi.cpp \
     src/widgets/urbandailywidget.cpp \
-    src/widgets/youdaodailywidget.cpp
+    src/widgets/youdaodailywidget.cpp \
+    src/widgets/urbandictwidget.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -72,7 +73,8 @@ HEADERS += \
     src/widgets/youdaodictwidget.h \
     src/api/urbanapi.h \
     src/widgets/urbandailywidget.h \
-    src/widgets/youdaodailywidget.h
+    src/widgets/youdaodailywidget.h \
+    src/widgets/urbandictwidget.h
 
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts \

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "widgets/youdaodictwidget.h"
+#include "widgets/urbandictwidget.h"
 
 class DictPage : public QWidget
 {
@@ -16,6 +17,7 @@ public:
 
 private:
     YoudaoDictWidget *youdao_dict_widget_;
+    UrbanDictWidget *urban_dict_widget_;
 };
 
 #endif // DICTPAGE_H
