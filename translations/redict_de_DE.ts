@@ -25,9 +25,8 @@
 <context>
     <name>DonatePage</name>
     <message>
-        <location filename="../src/donatepage.cpp" line="12"/>
         <source>Welcome to donate to me</source>
-        <translation>Danke für Spenden an mich</translation>
+        <translation type="vanished">Danke für Spenden an mich</translation>
     </message>
 </context>
 <context>
@@ -62,17 +61,17 @@
 <context>
     <name>SideBar</name>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="14"/>
         <source>Home</source>
         <translation>Startseite</translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="14"/>
         <source>Translation</source>
         <translation>Übersetzung</translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="14"/>
+        <location filename="../src/sidebar.cpp" line="15"/>
         <source>Setttings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -82,7 +81,7 @@
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="14"/>
+        <location filename="../src/sidebar.cpp" line="18"/>
         <source>Donate</source>
         <translation>Spenden</translation>
     </message>

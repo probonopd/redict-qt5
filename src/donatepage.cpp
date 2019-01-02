@@ -9,7 +9,7 @@ DonatePage::DonatePage(QWidget *parent)
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     QLabel *label = new QLabel;
-    label->setText(tr("Welcome to donate to me"));
+    label->setText("欢迎捐赠开发者，多多支持开源软件。");
     label->setStyleSheet("QLabel { font-size: 22px; }");
 
     QLabel *alipay_label = new QLabel;

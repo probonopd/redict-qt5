@@ -23,14 +23,6 @@
     </message>
 </context>
 <context>
-    <name>DonatePage</name>
-    <message>
-        <location filename="../src/donatepage.cpp" line="12"/>
-        <source>Welcome to donate to me</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>HomePage</name>
     <message>
         <location filename="../src/homepage.cpp" line="18"/>
@@ -62,12 +54,12 @@
 <context>
     <name>SideBar</name>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="14"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="13"/>
+        <location filename="../src/sidebar.cpp" line="14"/>
         <source>Translation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,12 +69,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="14"/>
+        <location filename="../src/sidebar.cpp" line="18"/>
         <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sidebar.cpp" line="14"/>
+        <location filename="../src/sidebar.cpp" line="15"/>
         <source>Setttings</source>
         <translation type="unfinished"></translation>
     </message>
