@@ -12,5 +12,6 @@
         <file>translations/redict_zh_CN.qm</file>
         <file>translations/redict_de_DE.qm</file>
         <file>translations/redict_uk_UA.qm</file>
+        <file>translations/redict_ru_RU.qm</file>
     </qresource>
 </RCC>
