@@ -69,7 +69,5 @@ void UrbanAPI::handleQueryTextFinished()
         datetime = obj.value("written_on").toString();
     }
 
-    qDebug() << definition;
-
     emit queryTextFinished(word, definition, example, author, datetime);
 }

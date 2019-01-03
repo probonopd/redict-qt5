@@ -1,11 +1,14 @@
 #ifndef URBANDICTWIDGET_H
 #define URBANDICTWIDGET_H
 
+#include <QStackedLayout>
 #include <QLabel>
-#include "contentframe.h"
-#include "../api/urbanapi.h"
 
-class UrbanDictWidget : public ContentFrame
+#include "../progresspage.h"
+#include "../api/urbanapi.h"
+#include "contentframe.h"
+
+class UrbanDictWidget : public QWidget
 {
     Q_OBJECT
 
@@ -18,6 +21,8 @@ private:
     void handleQueryTextFinished(QString, QString, QString, QString, QString);
 
 private:
+    QStackedLayout *stacked_layout_;
+    ProgressPage *progress_page_;
     QLabel *define_label_;
     UrbanAPI *urban_api_;
 };
