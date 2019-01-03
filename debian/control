@@ -1,7 +1,7 @@
 Source: redict
 Section: utils
 Priority: optional
-Maintainer: Rekols <rekols@foxmail.com>
+Maintainer: Rekols <unsonwong@gmail.com>
 Build-Depends: debhelper (>= 9), pkg-config, qt5-qmake,  libqt5svg5-dev, qttools5-dev-tools, qtmultimedia5-dev
 Standards-Version: 3.9.8
 Homepage: https://github.com/rekols
@@ -9,4 +9,4 @@ Homepage: https://github.com/rekols
 Package: redict
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A third-party youdao dictionary for linux.
+Description: A dictionary for Linux, based on C++/Qt development.
