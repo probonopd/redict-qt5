@@ -17,11 +17,7 @@ private:
     void handleQueryWordOfDayFinished(QString, QString, QString);
 
 private:
-    QLabel *word_label_;
-    QLabel *meaning_label_;
-    QLabel *example_label_;
-    QLabel *tips_label_;
-
+    QLabel *content_label_;
     UrbanAPI *urban_api_;
 };
 

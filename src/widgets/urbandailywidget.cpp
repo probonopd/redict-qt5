@@ -4,34 +4,14 @@
 
 UrbanDailyWidget::UrbanDailyWidget(QWidget *parent)
     : ContentFrame(parent),
-      word_label_(new QLabel),
-      meaning_label_(new QLabel),
-      example_label_(new QLabel),
-      tips_label_(new QLabel),
+      content_label_(new QLabel),
       urban_api_(new UrbanAPI)
 {
-    word_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
-    meaning_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
-    example_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
-    tips_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    content_label_->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    content_label_->setWordWrap(true);
 
-    word_label_->setWordWrap(true);
-    meaning_label_->setWordWrap(true);
-    example_label_->setWordWrap(true);
-
-    word_label_->setStyleSheet("QLabel { font-size: 22px; }");
-
-    addWidget(word_label_);
-    addSpacing(10);
-    addWidget(meaning_label_);
-    addSpacing(5);
-    addWidget(example_label_);
-    addSpacing(10);
-    addWidget(tips_label_);
+    addWidget(content_label_);
     addStretch();
-
-    tips_label_->setText("From Urbandictionary's word of the day.");
-    tips_label_->hide();
 
     setContentsMargins(30, 20, 30, 30);
 
@@ -43,9 +23,9 @@ UrbanDailyWidget::UrbanDailyWidget(QWidget *parent)
 
 void UrbanDailyWidget::handleQueryWordOfDayFinished(QString word, QString meaning, QString example)
 {
-    word_label_->setText(word);
-    meaning_label_->setText(meaning);
-    example_label_->setText(example);
-
-    tips_label_->show();
+    content_label_->setText(QString("<p style=\"font-size: 22px;\">%1</p>"
+                                    "<p>%2</p>"
+                                    "<p>%3</p>"
+                                    "From Urbandictionary's word of the day.")
+                            .arg(word).arg(meaning).arg(example));
 }
