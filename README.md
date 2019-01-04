@@ -33,7 +33,7 @@ A dictionary for Linux, based on C++/Qt development.
 
 We encourage you to report issues and contribute changes.
 
-* [Translate for your language on Transifex](https://www.transifex.com/resoft/redict-1)
+* [Translate for your language](https://github.com/rekols/redict/tree/master/translations)
 
 ## License
 
