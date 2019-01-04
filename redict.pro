@@ -79,7 +79,8 @@ HEADERS += \
 TRANSLATIONS += translations/redict.ts \
                 translations/redict_zh_CN.ts \
                 translations/redict_de_DE.ts \
-                translations/redict_uk_UA.ts
+                translations/redict_uk_UA.ts \
+                translations/redict_ru_RU.ts
 
 unix: system($$PWD/update_translations.sh)
 
