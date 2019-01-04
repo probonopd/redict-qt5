@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QSettings>
 #include <QStackedLayout>
 #include "../api/youdaoapi.h"
 #include "../progresspage.h"
@@ -20,6 +21,9 @@ private:
     void handleNetworkError();
     void reload();
 
+    void clearImageCache();
+    void loadImage(const QByteArray &data);
+
 private:
     YoudaoAPI *youdao_api_;
     QLabel *image_label_;
@@ -29,6 +33,9 @@ private:
 
     QStackedLayout *stacked_layout_;
     ProgressPage *progress_page_;
+    QSettings settings_;
+
+    QString image_cache_path_;
 };
 
 #endif // YOUDAODAILYWIDGET_H
