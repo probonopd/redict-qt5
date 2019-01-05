@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>redict</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>Redict</name>
+	<summary>A dictionary for Linux, based on C++/Qt development</summary>
+	<description>
+		<p>Archive Manager (also known as File Roller) is the default GNOME application for opening, creating, and modifying archive and compressed archive files.</p>
+	</description>
+	<launchable type="desktop-id">redict.desktop</launchable>
+	<url type="homepage">https://github.com/rekols/redict</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/rekols/redict/146156735914f5ae3654bce09db683a5d2b97bef/screenshots/screenshot1.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>redict.desktop</id>
+	</provides>
+</component>
