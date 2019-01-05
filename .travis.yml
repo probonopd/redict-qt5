@@ -14,9 +14,10 @@ install:
 script:
   - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
-  - mkdir -p appdir/usr/bin/ appdir/usr/share/applications/ appdir/usr/share/applications/ appdir/usr/share/icons/hicolor/scalable/apps
+  - mkdir -p appdir/usr/bin/ appdir/usr/share/applications/ appdir/usr/share/applications/ appdir/usr/share/icons/hicolor/scalable/apps usr/share/metainfo
   - cp redict appdir/usr/bin/
   - cp redict.desktop appdir/usr/share/applications/
+  - cp redict.appdata.xml usr/share/metainfo/
   - cp images/redict.svg appdir/usr/share/icons/hicolor/scalable/apps/redict.svg
   - find appdir/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
