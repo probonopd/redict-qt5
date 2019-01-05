@@ -25,6 +25,8 @@ private:
     void initTesseractOCR();
     void initTrayIcon();
 
+    void detectPicture();
+
     void toggleWindowVisible();
     void handleSideButtonClicked(int);
 
@@ -41,6 +43,8 @@ private:
     QStackedLayout *stacked_layout_;
     FloatDialog *float_dialog_;
     TrayIcon *tray_icon_;
+
+    QImage screenshot_image_;
 };
 
 #endif // MAINWINDOW_H

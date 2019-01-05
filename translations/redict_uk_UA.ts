@@ -51,7 +51,7 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../src/settingspage.cpp" line="27"/>
+        <location filename="../src/settingspage.cpp" line="25"/>
         <source>Turn on the system tray icon</source>
         <translation>Увімкнути іконку в системному лотку</translation>
     </message>

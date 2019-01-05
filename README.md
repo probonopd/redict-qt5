@@ -6,7 +6,7 @@ A dictionary for Linux, based on C++/Qt development.
 
 ## Build dependencies
 
-`sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev`
+`sudo apt install g++ qt5-default qtmultimedia5-dev libqt5svg5-dev libqt5x11extras5-dev libx11-dev libxtst-dev tesseract-ocr-eng`
 
 ## Installation
 

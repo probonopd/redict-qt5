@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
       tray_icon_(new TrayIcon)
 {
     initAttributes();
-    // initTesseractOCR();
+    initTesseractOCR();
     initTrayIcon();
 }
 
@@ -69,42 +69,14 @@ void MainWindow::initAttributes()
 void MainWindow::initTesseractOCR()
 {
 #ifdef Q_OS_LINUX
+    QTimer *timer = new QTimer(this);
+    timer->setSingleShot(true);
+    timer->setInterval(300);
+    connect(timer, &QTimer::timeout, this, &MainWindow::detectPicture);
+
     connect(qApp->clipboard(), &QClipboard::dataChanged, this, [=] {
-        QImage image = qApp->clipboard()->image(QClipboard::Clipboard);
-        if (image.isNull()) {
-            return;
-        }
-
-        QString imgPath = QDir::homePath() + "/.local/redict_ocr.png";
-        QString textPath = QDir::homePath() + "/.local/redict_ocr";
-        image = image.scaled(QSize(image.width() * 2, image.height() * 2));
-        image.save(imgPath, "PNG");
-
-        QStringList support_languages = {"eng", "chi_sim", "chi_tra"};
-
-        for (const QString &language : support_languages) {
-            QProcess process;
-            process.start("tesseract", QStringList() << imgPath << textPath << "-l" << language);
-            process.waitForFinished(-1);
-
-            QFile file(textPath + ".txt");
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                QString text = file.readAll();
-
-                qDebug() << text.simplified();
-
-                if (text.simplified().isEmpty()) {
-                    float_dialog_->hide();
-                    return;
-                }
-
-                if (float_dialog_->isVisible())
-                    return;
-
-                float_dialog_->query(text);
-                float_dialog_->popup(QCursor::pos());
-            }
-        }
+        screenshot_image_ = qApp->clipboard()->image(QClipboard::Clipboard);
+        timer->start();
     });
 #endif
 }
@@ -117,6 +89,49 @@ void MainWindow::initTrayIcon()
         // Ubuntu 18.10 is invalid !!!
         tray_icon_->hide();
     }
+}
+
+void MainWindow::detectPicture()
+{
+#ifdef Q_OS_LINUX
+    QImage image = screenshot_image_;
+    if (image.isNull()) {
+        return;
+    }
+
+    QSettings settings;
+    QString image_path = QString("%1/redict_ocr.png")
+            .arg(QFileInfo(settings.fileName()).absolutePath());
+
+    QString text_path = QString("%1/redict_ocr")
+            .arg(QFileInfo(settings.fileName()).absolutePath());
+
+    image = image.scaled(QSize(image.width() * 3, image.height() * 3), Qt::KeepAspectRatio);
+    image.save(image_path, "PNG");
+
+    QProcess process;
+    process.start("tesseract", QStringList() << image_path << text_path << "-l" << "eng");
+    process.waitForFinished(-1);
+
+    QFile file(text_path + ".txt");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QString text = file.readAll();
+
+        qDebug() << text.simplified();
+
+        if (text.simplified().isEmpty()) {
+            float_dialog_->hide();
+            return;
+        }
+
+        if (float_dialog_->isVisible())
+            return;
+
+        float_dialog_->query(text);
+        float_dialog_->popup(QCursor::pos());
+    }
+    file.close();
+#endif
 }
 
 void MainWindow::toggleWindowVisible()
@@ -140,6 +155,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
         QMainWindow::setVisible(false);
         e->ignore();
     } else {
+        float_dialog_->close();
         e->accept();
     }
 }
